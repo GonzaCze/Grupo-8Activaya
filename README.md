@@ -2,12 +2,12 @@ Despcripción de los productos ofrecidos:
 _Bebidas de todo tipo: Cervezas, Vinos, Espumantes, Destilados, Gaseosas.
 
 Público potencial de ActivaYa:
-_ Personas de cualquier genero entre 18 a 35 años ubicados en la ciudad de Posadas.
+_ Personas de cualquier genero y edad (mayores de 18 para la compra de bebidas alcoholicas) ubicadas en la ciudad de Posadas.
 
 Integrantes del Grupo:
-1_Gonzalo Czerevin
+1_Gonzalo Czerevin 
 2_Sergio D'Angelo
-3_Cristian Schmidt
+3_Cristian Schmidt 
 4_Ignacio Pegels
 
 Sitios de Referencia:

@@ -1,6 +1,6 @@
 Despcripción de los productos ofrecidos:
 _Bebidas de todo tipo: Cervezas, Vinos, Espumantes, Destilados, Gaseosas.
-
+_Alimentos Salados y Dulces (snacks, golosinas, aquellos requeridos para picar).
 Público potencial de ActivaYa:
 _ Personas de cualquier genero y edad (mayores de 18 para la compra de bebidas alcoholicas) ubicadas en la ciudad de Posadas.
 

@@ -1,0 +1,27 @@
+.container1{
+    display: inline-flex;
+}
+li{
+    display: inline-flex;
+}
+
+
+
+/* ul{
+    display: inline-flex;
+} */
+
+/* ul{
+    display: flex;
+    width: 500px;
+    flex-direction: row;
+    text-decoration: none;
+    background-color: grey;
+    justify-content: center;
+}
+
+li{
+    display: flex;
+    flex-grow: 1;
+} */
+

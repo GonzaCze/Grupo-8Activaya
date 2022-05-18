@@ -1,13 +1,35 @@
 .container1{
-    display: inline-flex;
+    height: 100px ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+    background-color: red;
 }
-li{
-    display: inline-flex;
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    background-color: yellow;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+}
+
+img{
+    width: 100px;
+    height: 100px ;
 }
 
 
-
-/* ul{
+/*  ul{
     display: inline-flex;
 } */
 
@@ -18,10 +40,6 @@ li{
     text-decoration: none;
     background-color: grey;
     justify-content: center;
-}
-
-li{
-    display: flex;
-    flex-grow: 1;
 } */
+
 

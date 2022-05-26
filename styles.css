@@ -21,7 +21,7 @@ html{
     list-style-type: none;}
 
     header{
-        background-color: 0F0E0E;
+        background-color: 541212;
     }
 
     .cajaA{
@@ -101,7 +101,7 @@ html{
              /* <----------- MAIN -----------> */
 
     main{
-        background-color: #541212;
+        background-color: 8B9A46;
     }
 
     .caja1{
@@ -174,7 +174,7 @@ html{
 
     footer{
         display: flex;
-        background-color: 8B9A46;
+        background-color: EEEEEE;
         flex-direction: row;
         justify-content: space-around;
     }
@@ -199,3 +199,5 @@ html{
     .textoFooter{
         margin: 10px;
     }
+
+}

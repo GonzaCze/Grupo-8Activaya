@@ -1,0 +1,79 @@
+
+html{
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+*, *::after {
+    box-sizing: inherit;
+}
+
+@media(min-width:800px){
+   
+    html{
+        box-sizing: border-box;
+        margin: 0%;}
+
+.datosPersonales{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+input{
+    display: flex;
+    width: 40%;
+    padding: 20px;
+}
+
+li.categorias ul{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    border: none;
+    border-radius: 25px;
+}
+
+.radio1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.compraroVender{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 15%;
+}
+
+.buttonEnviar{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.buttonEnviar button{
+   font-size:  20px;
+   width: 20%;
+   background-color: 0F0E0E;
+   color: white;
+}
+.tituloRegistro{
+    text-align: center;
+    color: white;
+}
+
+form{
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    padding: 0;
+    margin:0;
+}
+    }

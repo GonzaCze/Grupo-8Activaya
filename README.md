@@ -20,3 +20,5 @@ Sitios de Referencia:
 4_  https://www.tada.com.ar/catalogo/categoria/cervezas
 
 5_  https://compragamer.com/index.php
+
+https://colorhunt.co/palette/0f0e0e5412128b9a46eeeeee

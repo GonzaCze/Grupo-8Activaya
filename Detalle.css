@@ -1,0 +1,78 @@
+html{
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+*, *::after {
+    box-sizing: inherit;
+}
+
+@media(min-width:800px){
+    html{
+        box-sizing: border-box;
+        margin: 0%;
+    }
+    .mainDetalleProducto{
+        background-color: 8B9A46;
+    }
+
+    .detalleCaja1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detalleCaja2{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .detalleCaja3 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .detalleimagen{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .detalletitulo{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .listaDetalleProducto{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .descripcionProducto{
+        width:50%;
+        padding-left:  30px;
+        padding-bottom: 30px;
+        text-align: justify;
+    }
+
+    .historaProducto{
+        width: 50%;
+        padding-bottom: 30px;
+    }
+
+    .botonCarrito{
+        font-size: 30px;;
+        width: 40%;
+    }
+
+    .botonCantidad{
+        font-size: 25px;
+        width: 20%;
+    }
+
+    p{
+        margin: 0;
+    }
+
+}

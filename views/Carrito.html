@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../public/css/styles.css" rel="stylesheet" type="text/css">
-    <link href="../public/css/Registro.css" rel="stylesheet" type="text/css">
-    <link href="../public/css/Login.css" rel="stylesheet" type="text/css">
-    <link href="../public/css/Carrito.css" rel="stylesheet" type="text/css">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="/css/registro.css" rel="stylesheet" type="text/css">
+    <link href="/css/login.css" rel="stylesheet" type="text/css">
+    <link href="/css/carrito.css" rel="stylesheet" type="text/css">
 
     <script src="https://kit.fontawesome.com/061148ecae.js" crossorigin="anonymous"></script>
     <title>Document</title>
@@ -16,15 +16,15 @@
 <body>
     <header>
         <div class=cajaA>
-            <img class="logo" src="../public/imagenes/sin fondo.png">
+            <a href="/"><img class="logo" src="/imagenes/sin fondo.png"></a>
             <input class="buscador" type="text">
             <div class="SesionCarrito">
                 <div class="sesion">
-                    <h3>Iniciar Sesión</h3>
+                    <a href="/login"><h3>Iniciar Sesión</h3></a>
                     <i class="fa-solid fa-address-card"></i>
                 </div>
                 <div class="pagar">
-                    <h3>Pagar</h3>
+                    <a href="/carrito"><h3>Pagar</h3></a>
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <li>Productos</li>
                 <li>Marcas</li>
                 <li>Combos</li>
-                <li>Ayuda</li>
+                <a href="/registro"><li>Registrase</li></a>
             </ul>
         </nav>
     </header>

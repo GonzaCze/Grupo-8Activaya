@@ -7,7 +7,7 @@ html{
     box-sizing: inherit;
 }
 
-@media(min-width:800px){
+
     html{
         box-sizing: border-box;
         margin: 0%;
@@ -35,7 +35,7 @@ html{
     }
 
     .CajaA img{
-        width: 50%;
+        width: 80%;
     }
 
     .cajaA input {
@@ -82,19 +82,31 @@ html{
         color: white;
     }
 
+    .menu{
+        display: flex;
+        width: 100%
+    }
+
     .menu ul{
         display: flex;
+        width: 100%;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         margin: 0;
+    }
+    
+    .menu ul a {
+        margin: 0;
+        padding: 0;
     }
 
     .menu ul li{
+        display: flex;
+        width: 100%;
         padding: 10px;
-        padding-left: 70px ;
-        padding-right: 70px;
+        margin: auto;
         text-align: center;
-        font-size: 30px;
+        font-size: 35px;
         color: white;
     }
 
@@ -107,8 +119,8 @@ html{
     .caja1{
         display: flex;
         flex-direction: row;
-        width: 100vw;
-        height: 100%;
+        width: 100%;
+        /* height: 100%; */
     }
 
     img.contain{
@@ -211,4 +223,146 @@ html{
         padding: 0;
         margin:0;
     }
-}
+
+    @media (max-width:768px) {
+        .menu ul li{
+            padding: 10px;
+            text-align: center;
+            font-size:   15px;
+            color: white;
+        }
+
+        .cajaA{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            /* padding: 0; */
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .CajaA img{
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+        }
+
+        .SesionCarrito{
+            margin: 10px;
+            margin-bottom: 5px;
+        }
+
+        .CajaA input {
+            width: 50%;
+        }
+
+        footer {
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .listaFooter{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contenedor1 h3 {
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .contendor2 h3 {
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+        .textoFooter {  
+            margin: 0px;
+            margin-left: 5px;
+        }
+
+        .listaFooter li {
+
+            margin-top: 5px;
+        }
+
+        .contenedor3 h3 {
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+    }
+
+    @media (max-width:360px) {
+        .menu ul li{
+            padding: 10px;
+            text-align: center;
+            font-size:   15px;
+            color: white;
+        }
+
+        .cajaA{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .CajaA img{
+            width: 50%;
+        }
+
+        footer {
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .listaFooter{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contenedor1 h3 {
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .contendor2 h3 {
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+        .textoFooter {  
+            margin: 0px;
+            margin-left: 5px;
+        }
+
+        .listaFooter li {
+
+            margin-top: 5px;
+        }
+
+        .contenedor3 h3 {
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+    }

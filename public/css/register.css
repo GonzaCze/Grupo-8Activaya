@@ -6,24 +6,27 @@ html{
 
 *, *::after {
     box-sizing: inherit;
-}
-
-@media(min-width:800px){
-   
-    html{
+}  
+html{
         box-sizing: border-box;
         margin: 0%;}
 
 .datosPersonales{
+    padding-left: 17%;
+    padding-right: 17%;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 10px;
 }
+.datosPersonales .li{
+    width: 100%;
+}
 
 input{
     display: flex;
-    width: 25%;
+    width: 50%;
     padding: 20px;
 }
 
@@ -54,16 +57,20 @@ input{
     display: flex;
     justify-content: center;
     padding: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+    
 }
 
 .buttonEnviar button{
-   font-size:  20px;
-   width: 20%;
+    margin:auto;
+    border-radius: 10px;
+   font-size: 20px;
+   max-width: 100%;
    background-color: 0F0E0E;
    color: white;
 }
 .tituloRegistro{
     text-align: center;
     color: white;
-}
 }

@@ -1,0 +1,27 @@
+<html lang="en">
+    <!-- Head -->
+    <head>
+        <%- include('./partials/head.ejs') %>
+        <link href="/css/login.css" rel="stylesheet" type="text/css">
+        <link href="/css/register.css" rel="stylesheet" type="text/css">
+        <title>Iniciar Sesion</title>
+    </head>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs')%>
+    <main class="login">
+        <form action="/register" method="Post">
+            <div class="botonesDeSesion">
+                <ul>
+                    <li class="datosPersonales">
+                        <input type="text" name="usuario" placeholder="Nombre de usuario o Correo Elecrónico">
+                    <li class="datosPersonales"><input type="password" placeholder="Contreseña"></li>
+                    <li class="buttonEnviar"><button type="submit">INICIAR SESIÓN</button></li>
+                </ul>
+            </div>
+        </form>
+    </main>
+    <!-- footer -->
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>

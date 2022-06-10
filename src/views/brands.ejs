@@ -1,0 +1,45 @@
+<html lang="en">
+     <!-- Head -->
+     <head>
+        <%- include('./partials/head.ejs') %>
+        <link href="/css/creacion.css" rel="stylesheet" type="text/css">
+        <title>Marcas</title>
+    </head> 
+<body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs')%>
+    <main>
+        <h3 class="agregarProducto">Agregar un producto</h3>
+        <div class="primerContenedor" >
+            <h3>Foto del producto</h3>
+            <div class="fotosDelProducto">
+                <input accept="image/*" id="imagenPrevisualizacion" type="file">
+                <img id="imagenPrevisualizacion">
+            </div>
+        </div>
+        <div class="segundoContenedor">
+            <h3>Nombre y descripción</h3>
+            <div class="nombreDescripcion">
+                <label for="inputDescripcion">Nombre</label>
+                <input type="text" id="inputDescripcion" placeholder="Ej: Cerverza Andes, Fernet Branca, etc">
+            </div>
+            <div class ="descripcionProducto">
+                <label for="descr">Descripción</label>
+                <textarea type="text" maxlength="300" placeholder="Escribe aquí la descripción del producto" id="descr" name="descripcion">  </textarea>
+            </div>
+        </div>
+        <div class="tercerContenedor">
+            <div class="precio">
+                <label for="precioProd">Precio</label>
+                <input type="text" maxlength="10" id="precioProd" name="precio">
+            </div>
+            <div class="stock">
+                <label for="stockProd">Stock</label>
+                <input type="text" maxlength="10" id="stockProd" name="stock">
+            </div>    
+        </div>
+    </main>
+    <!-- footer -->
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>

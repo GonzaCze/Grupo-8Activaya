@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+        <%- include('./partials/head.ejs') %>
+        <link href="/css/register.css" rel="stylesheet" type="text/css">
+        <title>Registrarse</title>
+</head>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs')%>
+    <main >
+        <h2 class="tituloRegistro">REGISTRO DE USUARIO</h2>
+        <form action="/register" method="Post">
+            <ul class="registro">
+                <li class="datosPersonales">
+                    <input type="text" name="nombre" placeholder="Nombre y apellido">
+                </li>
+                <li class="datosPersonales">
+                    <input type="text" name="usuario" placeholder="Nombre de usuari@">
+                </li>
+                <li class="datosPersonales">
+                    <input type="date" name="fechaNacimiento" placeholder="Fecha de nacimiento">
+                </li>
+                <li class="datosPersonales">
+                    <input type="domicilio" name="" placeholder="Domicilio">
+                </li>
+                <li class="datosPersonales"><input type="password" placeholder="Contreseña"></li>
+                <li class="datosPersonales"><input type="password" placeholder="Confirme Contraseña"></li>
+                <li class="buttonEnviar"><button  type="submit">ENVIAR</button></li>
+            </ul>
+        </form>
+    </main>
+    <!-- footer -->
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>

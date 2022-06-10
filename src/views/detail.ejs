@@ -1,0 +1,55 @@
+<html lang="en">
+    <!-- Head -->
+    <head>
+        <%- include('./partials/head.ejs') %>
+        <link href="/css/detail.css" rel="stylesheet" type="text/css">
+        <title>Detalle de producto</title>
+    </head>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs')%>
+    <main class="mainDetalleProducto">
+        <div class="detalleCaja1">
+            <div class="detalleCaja2">
+                <div class="detalleimagen">
+                    <img src="/img/Home/pixlr-bg-result.png">
+                </div>
+                <div class="detalletitulo">
+                    <h2>Chandon California Sweet Star</h2>
+                    <h4> $12.500</h4>
+                    <button class="botonCarrito" type="submit">Agregar al Carrito</button>
+                    <button class="botonCantidad" type="submit">- 0 +</button>
+                    <ul class="listaDetalleProducto">
+                        <il>Podés retirar en nuestros locales ver opciones </il>
+                        <il>Podés comprar como quieras, aceptamos tarjetas de crédito, débito, mercadopago.</il>
+                        <il> Compra protegida</il>
+                        <il>Estamos disponibles para responder tus consultas</il>
+                    </ul>
+                </div>
+            </div>
+            <div class="detalleCaja3">
+                <div class="descripcionProducto">
+                    <ul>
+                        <li>Envave: 750ml</li>
+                        <li>Pais: Francia</li>
+                        <li>Cantidad: 1</li>
+                        <li>Marca: Chandon</li>
+                    </ul>
+                </div>
+                <div class="historaProducto">
+                    <p>En la historia de Champagne, los vinos que se sometían al assemblage para obtener un mayor dulzor se describían habitualmente como "rich". De hecho, las botellas de Veuve Clicquot de 1840 encontradas recientemente en las islas Aland tienen más de 150 gramos de azúcar por litro. En Rusia, tradicionalmente, los consumidores añadían azúcar a su champagne para dar un toque personal a sus vinos. Hoy, Veuve Clicquot reactualiza esta tradición gracias a RICH, un champagne dedicado a la coctelería. Veuve Clicquot RICH aporta el espíritu del cóctel a una casa ya conocida por su audacia e innovación e invita a enriquecer la experiencia de degustación con un toque de lo más Clicquot. Rich es perfecto para cualquier momento y lugar.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <%- include('./partials/footer.ejs')%>
+</body> 
+</html>
+
+
+<!-- <head>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet"...    <link rel="stylesheet" href="css/normalize.css">
+    <%- include("./partials/head")%>
+</head> -->

@@ -1,24 +1,32 @@
-<header>
-    <div class=cajaA>
-        <a class="logo" href="/"><img  src="img/Home/loguito-02.png"></a>
-        <input class="buscador" type="text" placeholder="Buscar Productos: cervezas, vinos ...">
-        <div class="SesionCarrito">
-            <div class="sesion">
-                <a href="/login"><h3>Iniciar Sesión</h3></a>
-                <i class="fa-solid fa-address-card"></i>
-            </div>
-            <div class="pagar">
-                <a href="/shoppingCart"><h3>Pagar</h3></a>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
+<header class="main-header">
+    <div class="main-header-topBar">
+       <a href="../"><img src="/img/ActivaYAAAAA___1_-removebg-preview-removebg-preview.png" class="logo"></a>
+       <div class="buscar"> 
+        <input type="search"> <i class="fa-solid fa-search"></i>
         </div>
+       <!-- <ul>
+       <li class="sesion">
+        <a href="/login"><i class="fa-solid fa-address-card"></i></a>
+          
+       </li>
+       <li class="carrito">
+        <a href="/shop"><i class="fa-solid fa-cart-shopping"></i></a>
+        
+       </li>
+    </ul> -->
     </div>
-    <nav class="menu">
-        <ul>
-            <a><li>Productos</li></a>
-            <a href="/brands"><li>Marcas</li></a>
-            <a href="/detail"><li>Detalle de Producto</li></a>
-            <a href="/register"><li>Registrase</li></a>
-        </ul>
+    <!-- <a href="#" class="hamburguer-button"> -->
+        <input type="checkbox" id="hamburguer-button">
+        <label class="fa-solid fa-bars" for="hamburguer-button"></label>
+        <!-- <i class="fa-solid fa-bars"></i> -->
+    <nav class="main-navbar">
+      <ul class="bottom-navBar">
+        <!-- <li> <a href="#">Marcas</a></li> -->
+        <li> <a href="../products">Productos</a></li>
+        <li> <a href="../register">Registrarse</a></li>
+        <li> <a href="../login">Cuenta</a></li>
+        <li> <a href="../create">Crear</a></li>
+        <li> <a href="../shoppingCart"> <i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
     </nav>
 </header>

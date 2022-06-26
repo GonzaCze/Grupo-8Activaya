@@ -1,6 +1,5 @@
-
 module.exports = {
-    home: (req, res)=>{
+    index: (req, res)=>{
         res.render('index', )
     },
     login: (req, res)=>{
@@ -9,14 +8,14 @@ module.exports = {
     register: (req, res)=>{
         res.render('register',)
     },
-    detail: (req, res)=>{
-        res.render('detail',)
+    create: (req, res)=>{
+        res.render('create',)
     },
     shoppingCart: (req, res)=>{
         res.render('shoppingCart',)
     },
-    brands: (req, res)=>{
-        res.render('brands',)
+    products: (req, res)=>{
+        res.render('products',)
     },
 }
 

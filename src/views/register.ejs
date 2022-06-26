@@ -7,29 +7,45 @@
 <body>
     <!-- Header -->
     <%- include('./partials/header.ejs')%>
-    <main >
-        <h2 class="tituloRegistro">REGISTRO DE USUARIO</h2>
-        <form action="/register" method="Post">
-            <ul class="registro">
-                <li class="datosPersonales">
-                    <input type="text" name="nombre" placeholder="Nombre y apellido">
-                </li>
-                <li class="datosPersonales">
-                    <input type="text" name="usuario" placeholder="Nombre de usuari@">
-                </li>
-                <li class="datosPersonales">
-                    <input type="date" name="fechaNacimiento" placeholder="Fecha de nacimiento">
-                </li>
-                <li class="datosPersonales">
-                    <input type="domicilio" name="" placeholder="Domicilio">
-                </li>
-                <li class="datosPersonales"><input type="password" placeholder="Contreseña"></li>
-                <li class="datosPersonales"><input type="password" placeholder="Confirme Contraseña"></li>
-                <li class="buttonEnviar"><button  type="submit">ENVIAR</button></li>
-            </ul>
-        </form>
+    <main class="main-login">
+        <div class="login">
+            <h1>Registrarse</h1>
+            <form action="/datos" method="POST">
+            <p>
+                 <label for="nombre">Nombre</label>   
+                 <input type="text" name="nombre" placeholder="" required 
+                id="nombre">
+            </p>
+            <p>
+            <label for="apellido">Apellido</label>   
+            <input type="text" name="apellido" placeholder="" required 
+           id="apellido">
+            </p>
+            <p>
+              <label for="email">Email</label>   
+              <input type="email" name="email" placeholder="" required 
+             id="email">
+              </p>
+            <p>
+                <label for="password">Contraseña</label>
+                <input type="password" name="usuario" placeholder="" id="contraseña">
+            </p>
+            <p>
+                <label for="category">Categoria:</label>
+                <select name="pdtCategory" id="category" required>
+                    <option value="user">Usuario</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </p>
+            <p>
+                <label>Subir Imagen</label>
+                <input type="file" name="pdtImage" required>
+            </p>
+ 
+            <input type="submit" value="Registrate" id="registro">
+            <input type="reset" value="Limpiar" id="registro">
+            </form>
+        </div>
     </main>
-    <!-- footer -->
-    <%- include('./partials/footer.ejs')%>
 </body>
 </html>

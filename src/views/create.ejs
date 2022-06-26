@@ -1,0 +1,57 @@
+<html lang="en">
+    <!-- Head -->
+    <head>
+        <%- include('./partials/head.ejs') %>
+        <!-- <link href="/css" rel="stylesheet" type="text/css"> -->
+        <title>Detalle de producto</title>
+    </head>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs')%>
+    <main class="main-login">    
+        <div class="login">
+    <h1>Formulario para crear producto</h1>
+    <form action="/products" method="post" enctype="multipart/form-data">
+        <p>
+            <label for="id">Id del producto:</label>
+            <input type="number"  name="pdtID" id="id" required>
+        </p>
+        <p>
+            <label for="name">Nombre del producto:</label>
+            <input type="text" name="pdtName" id="name" required>
+        </p>
+        <p>
+            <label>Subir Imagen</label>
+            <input type="file" name="pdtImage" required>
+        </p>
+        <p>
+            <label for="Descripcion">Descripcion:</label>
+            <textarea name="pdtDescription" id="Descripcion" cols="30" rows="10" required>Breve descripcion del producto</textarea>
+        </p>
+        <p>
+            <label for="category">Categoria:</label>
+            <select name="pdtCategory" id="category" required>
+                <option value="beer">Cerveza</option>
+                <option value="wine">Vino</option>
+                <option value="sparklin">Espumante</option>
+                <option value="distilled">Destilado</option>
+                <option value="snacks">Snack</option>
+                <option value="soda">Gaseosa</option>
+            </select>
+        </p>
+        <p>
+            <label for="capacity">Contenido(ml o gr):</label>
+            <input type="number" name="pdtCapacity" id="capacity" required>
+        </p>
+        <p>
+            <label for="price">Precio:</label>
+            <input type="number" name="pdtPrice" id="price" required>
+        </p>
+        <input type="submit" value="Guardar" id="registro">
+        <input type="reset" value="Limpiar" id="registro">
+    </form>
+        </div>
+    </main>
+</body> 
+</html>
+

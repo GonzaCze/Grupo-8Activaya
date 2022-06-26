@@ -7,27 +7,96 @@
 <body>
     <!-- Header -->
     <%- include('./partials/header.ejs')%>
-    <main>
-        <div class="caja1">
-            <div class="caja2">
-               <img class="birra" src="/img/Home/heineken.jpg">
-            </div>
-            <div class="caja3">
-                <div class="caja4">
-                    <img class="gin" src="/img/Home/Sale.png">
-                </div>
-                <div class="caja5">
-                    <div class="caja6">
-                        <img class="fernet" src="/img/Home/huge.png">
-                    </div>
-                    <div class="caja7">
-                        <img class="vino" src="/img/Home/vino.png">
-                    </div>
-                </div>
-            </div>
+    <body>
+    <section class="main-section">
+        <div class="slider">
+            <ul>
+            
+            <li><img src="/img/Slider-3-Cuotas.png" alt=""></li>
+            <li><img src="/img/Slider-Heineken.png" alt=""></li>
+            <li><img src="/img/SaltaCautiva-slider.png" alt=""></li>
+            <li><img src="/img/Schneider-slider.png" alt=""></li>
+            
+            </ul>
         </div>
-    </main>
+      </section>
+    <main class="main-products">
+        <div class="products-container">
+          <h1>OFERTONES</h1>
+          <section class="products">
+            <a href="/products"><div class="main-article">
+              <img src="/img/Antares-Barleywine.png" alt="" class="product-img">
+              <div class="product-description">
+                <h3 class="product-title">BarleyWine</h3>
+                <span class="price">$230</span>
+              </div>
+            </div></a>
+            <a href="/products"><div class="main-article">
+              <img src="/img/Antares-caravana.png" alt="" class="product-img">
+              <div class="product-description">
+                <h3 class="product-title">Caravana</h3>
+                <span class="price">$230</span>
+              </div>
+            </div></a>
+            <a href="/products"><div class="main-article">
+              <img src="/img/Antares-Barleywine.png" alt="" class="product-img">
+              <div class="product-description">
+                <h3 class="product-title">CuatroTres</h3>
+                <span class="price">$230</span>
+              </div>
+            </div></a>
+            <a href="/products"><div class="main-article">
+              <img src="/img/Antares-caravana.png" alt="" class="product-img">
+              <div class="product-description">
+                <h3 class="product-title">Caravana</h3>
+                <span class="price">$230</span>
+              </div>
+            </div></a>
+            </div>
+          </section>
+        </div>
+      </main>
+    <main class="main">
+        <section id="info">
+            <h3>Nuestras marcas mas vendidas</h3>
+            <div class="contenedor">
+                <div class="info-marcas">
+                    <img src="/img/heineken-removebg-preview.png" alt="">
+                    <!-- <h4>Heineken</h4> -->
+                </div>
+                <div class="info-marcas">
+                    <img src="/img/logo-antares-removebg-preview.png" alt="">
+                    <!-- <h4>Antares</h4> -->
+                </div>
+                <div class="info-marcas">
+                    <img src="/img/Jack-Daniels-blanco-removebg-preview.png" alt="">
+                    <!-- <h4>Jack Daniels</h4> -->
+                </div> 
+                <div class="info-marcas">
+                    <img src="/img/ron-zacapa-centenario-logo-vector-removebg-preview.png" alt="">
+                    <!-- <h4>Zacapa</h4> -->
+                </div>
+                <div class="info-marcas">
+                  <img src="/img/Miller.logo-removebg-preview.png" alt="">
+                  <!-- <h4>Miller</h4> -->
+                </div>
+                <div class="info-marcas">
+                <img src="/img/Stella-Logo-removebg-preview.png" alt="">
+                <!-- <h4>Stella Artois</h4> -->
+                </div>
+                <div class="info-marcas">
+                <img src="/img/johnnie-walker-logo.png" alt="">
+               <!-- <h4>Johnnie Walker</h4> -->
+                </div>
+                <div class="info-marcas">
+                <img src="/img/Smirnoff-Logo.png" alt="">
+                <!-- <h4>Smirnoff</h4> -->
+                </div>          
+            </div>
+        </section>  
     <!-- footer -->
     <%- include('./partials/footer.ejs')%>
+    </main>                 
+    </body>
 </body>
 </html>

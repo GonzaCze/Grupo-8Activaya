@@ -1,6 +1,8 @@
-module.exports = {
+const path = require ("path")
+
+const controller = {
     index: (req, res)=>{
-        res.render('index', )
+        res.render('index', {product: product} )
     },
     login: (req, res)=>{
         res.render('login',)
@@ -19,25 +21,8 @@ module.exports = {
     },
 }
 
+const product = {
+    name :"coca"
+}
 
-
-
-// const path =  require ("path");
-// const controller = {
-//     index:  (req, res)=>{
-//         res.sendFile(path.resolve(__dirname, '../views/index.html'))
-//     },
-//     login: (req, res)=>{
-//         res.sendFile(path.resolve(__dirname, './views/login.html'))
-//     },
-//     registro:  (req, res)=>{
-//         res.sendFile(path.resolve(__dirname, './views/registro.html'))
-//     },
-//     detalle: (req, res)=>{
-//         res.sendFile(path.resolve(__dirname, './views/detalle.html'))
-//     },
-//     carrito: (req, res)=>{
-//         res.sendFile(path.resolve(__dirname, './views/carrito.html'))
-//     }
-// }
-// module.exports = controller; 
+module.exports =  controller ;

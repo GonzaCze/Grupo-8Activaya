@@ -10,40 +10,43 @@
     <main class="main-login">
         <div class="login">
             <h1>Registrarse</h1>
-            <form action="/datos" method="POST">
-            <p>
-                 <label for="nombre">Nombre</label>   
-                 <input type="text" name="nombre" placeholder="" required 
-                id="nombre">
-            </p>
-            <p>
-            <label for="apellido">Apellido</label>   
-            <input type="text" name="apellido" placeholder="" required 
-           id="apellido">
-            </p>
-            <p>
-              <label for="email">Email</label>   
-              <input type="email" name="email" placeholder="" required 
-             id="email">
-              </p>
-            <p>
-                <label for="password">Contraseña</label>
-                <input type="password" name="usuario" placeholder="" id="contraseña">
-            </p>
-            <p>
-                <label for="category">Categoria:</label>
-                <select name="pdtCategory" id="category" required>
-                    <option value="user">Usuario</option>
-                    <option value="admin">Admin</option>
-                </select>
-            </p>
-            <p>
-                <label>Subir Imagen</label>
-                <input type="file" name="pdtImage" required>
-            </p>
- 
-            <input type="submit" value="Registrate" id="registro">
-            <input type="reset" value="Limpiar" id="registro">
+            <form action="/users" method="post" enctype="multipart/form-data">
+                <p>
+                    <label for="id">Id del Usuario:</label>
+                    <input type="number"  name="userID" id="id" required>
+                </p>
+                <p>
+                    <label for="nombre">Nombre</label>   
+                    <input type="text" name="userName" placeholder="" required 
+                    id="nombre">
+                </p>
+                <p>
+                    <label for="apellido">Apellido</label>   
+                    <input type="text" name="userLastN" placeholder="" required 
+                    id="apellido">
+                </p>
+                <p>
+                    <label for="email">Email</label>   
+                    <input type="email" name="userEmail" placeholder="" required 
+                    id="email">
+                </p>
+                <p>
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="userPass" placeholder="" id="contraseña">
+                </p>
+                <p>
+                    <label for="category">Categoria:</label>
+                    <select name="userCategory" id="category" required>
+                        <option value="user">Usuario</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </p>
+                <p>
+                    <label>Subir Imagen</label>
+                    <input type="file" name="userImage" required>
+                </p>
+                <input type="submit" value="Registrate" id="registro">
+                <input type="reset" value="Limpiar" id="registro">
             </form>
         </div>
     </main>

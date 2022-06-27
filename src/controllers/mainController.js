@@ -19,6 +19,9 @@ const controller = {
     products: (req, res)=>{
         res.render('products',)
     },
+    users: (req, res)=>{
+        res.render('users',)
+    }
 }
 
 const product = {

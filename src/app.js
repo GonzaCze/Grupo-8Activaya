@@ -1,19 +1,30 @@
 const express = require("express");
-const app = express ();
 const path =  require ("path");
 const mainRoute = require('./routes/mainRoute');
+const productsRoutes = require('./routes/productsRoutes');
+const usersRoutes = require('./routes/usersRoutes');
+const methodOverride = require('method-override');
 
 
-const PORT = 3000;
-
-app.use(express.static(path.join(__dirname, '../public')))
-app.use(express.urlencoded({extended:false}));
+const app = express ();
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
 
-app.use(mainRoute);
+app.use(methodOverride('_method'));
 
+const PORT = 3000;
 app.listen(PORT, ()=>{
     console.log('Server corriendo en port: ', PORT)
 })
+
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Setup del req.body
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+
+// ruta home
+app.use(mainRoute);
+app.use('/products', productsRoutes);
+app.use('/users', usersRoutes);

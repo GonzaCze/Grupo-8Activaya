@@ -9,6 +9,7 @@ mainRoute.get('/create', mainController.create);
 mainRoute.get('/products', mainController.products);
 mainRoute.get('/shoppingCart', mainController.shoppingCart);
 mainRoute.get('/users', mainController.users);
-mainRoute.get("/detalle/:id", mainController.detail)
+mainRoute.get("/detalle/:id", mainController.detail);
+mainRoute.get(':id/edit', mainController.edit)
 
 module.exports = mainRoute;

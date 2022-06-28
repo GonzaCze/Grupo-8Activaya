@@ -10,11 +10,16 @@ let products = require ("../data/products.json")
 
 const controller = {
     browse: (req, res) =>{
-        res.send('estamos en /products');
+        res.render('products',{products});
     },
-    read: (req, res) => {
+    detail: (req, res) => {
         const productId = req.params.id
-        res.send('estamos en /products/' + productId);
+        if(products.find(item => item.id == id)){
+            const productDetail = products.find((item)=> item.id == id);
+            res.render('detail', {productDetail, products});
+        }else{
+            res.send('no hubo coincidencia')
+        }
     },
     create: (req, res) => {
        //res.send('Estoy en FORMULARIO para crear producto');

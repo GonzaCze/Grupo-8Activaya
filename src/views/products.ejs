@@ -27,7 +27,9 @@
             <section class="products">
               <% for (let i = 0; i<products.length ; i++) { %>
                <div class="main-article">
-                <a href="/detalle/<%= products[i].pdtID%>"><img src="/uploads/products/<%=products[i].pdtImage %>"  alt="" class="product-img"></a>
+                <a href="/detalle/<%= products[i].pdtID%>">
+                  <img src="/uploads/products/<%=products[i].pdtImage %>"  alt="" class="product-img">
+                </a>
                 <div class="product-description">
                   <h3 class="product-title"><%= products[i].pdtName %></h3>
                   <span class="price">$ <%= products[0].pdtPrice %></span>

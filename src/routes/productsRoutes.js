@@ -31,7 +31,7 @@ router.get('/edit/:id', controller.edit);
 router.put('/:id', controller.update);
 
 // GET - localhost:3000/products/:id
-router.get('/:id', controller.read);
+router.get('/:id', controller.detail);
 
 // DELETE - localhost:3000/products/:id
 router.delete('/:id', controller.delete);

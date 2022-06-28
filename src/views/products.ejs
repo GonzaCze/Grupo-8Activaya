@@ -25,62 +25,16 @@
           <div class="products-container">
             <h1>Cervezas Premium</h1>
             <section class="products">
-              <div class="main-article">
-                <img src="/img/Antares-Barleywine.png" alt="" class="product-img">
+              <% for (let i = 0; i<products.length ; i++) { %>
+               <div class="main-article">
+                <a href="/detalle/<%= products[i].pdtID%>"><img src="/uploads/products/<%=products[i].pdtImage %>"  alt="" class="product-img"></a>
                 <div class="product-description">
-                  <h3 class="product-title">Barley Wine</h3>
-                  <span class="price">$230</span>
+                  <h3 class="product-title"><%= products[i].pdtName %></h3>
+                  <span class="price">$ <%= products[0].pdtPrice %></span>
                 </div>
               </div>
-              <div class="main-article">
-                <img src="/img/Antares-caravana.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Caravana</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-CuatroTres.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">CuatroTres</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-ElCentinela.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">El Centinela</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-imperialStaut.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Imperial Staut</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-kolsch.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Kolsch</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-Catalina.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Catalina la Grande</h3>
-                  <span class="price">$230</span>
-                </div>       
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares_HoneyBeer.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Honey Beer</h3>
-                  <span class="price">$230</span>
-                </div>       
-              </div>
+              <%}%>
+              
             </section>
           </div>
         </main>

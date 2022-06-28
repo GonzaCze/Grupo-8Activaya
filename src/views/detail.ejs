@@ -1,0 +1,62 @@
+<html lang="en">
+     <!-- Head -->
+     <head>
+        <%- include('./partials/head.ejs') %>
+        <link href="/css/detail.css" rel="stylesheet" type="text/css">
+        
+        <title>Marcas</title>
+    </head> 
+    <body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs')%>
+    <body>
+        <section class="main-section">
+          <div class="slider">
+              <ul>
+              
+              <li><img src="/img/Slider-3-Cuotas.png" alt=""></li>
+              <li><img src="/img/Slider-Heineken.png" alt=""></li>
+              <li><img src="/img/SaltaCautiva-slider.png" alt=""></li>
+              <li><img src="/img/Schneider-slider.png" alt=""></li>
+              <!-- <li><img src="/img/slider-JWalker.png" alt=""></li> -->
+              </ul>
+          </div>
+        </section>
+        <h1 class="titleDetail">Detalle del producto</h1>
+        <br/>
+        <main class="main-products">
+            <div class="products-container">
+            <% for (let i = 0; i<products.length ; i++) { %>
+                <% if (String(products[i].pdtID) === id) { %>
+                    <% console.log (products[i].pdtID) %>
+               <div class="main-article">
+                <img src="/uploads/products/<%=products[i].pdtImage %>"  alt="" class="product-img"></a>
+                <div class="product-description">
+                  <h3 class="product-title"></h3>
+                  <span class="price"></span>
+                </div>
+              </div>
+            </div>
+            <div class="descriptionProduct">
+                <h1 class="titleProduct"> <%= products[i].pdtName %> </h1> 
+                <h4 class="priceDetail">$ <%= products[i].pdtPrice %></h4>
+                <input type="number"  name="pdtID" id="id" required>
+                <input type="submit" value="Agregar al Carrito" id="registro">
+                <p> Podés retirar en nuestro local </p>
+                <p>Podés comprar como quieras
+                  aceptamos tarjetas de crédito, débito, mercadopago.</p>
+                <p>Compra protegida
+                  podés devolver tu pedido si no es lo que esperabas</p>
+                <p>Estamos disponibles para responder tus consultas
+                  escribinos por el chat en vivo</p> 
+                <%= products[i].pdtDescription %>
+            </div>
+              <%}}%>
+              
+            
+        </main>
+        </body>
+
+    </body>     
+</body>
+</html>

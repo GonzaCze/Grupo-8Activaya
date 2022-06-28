@@ -5,7 +5,8 @@ const path = require('path');
 const filePath = path.resolve(__dirname, '../data/products.json');
 const productArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-console.log(productArray);
+let products = require ("../data/products.json")
+
 
 const controller = {
     browse: (req, res) =>{
@@ -52,6 +53,7 @@ const controller = {
         const productId = req.params.id
         res.send('vamos eliminar / borrar del producto' + productId);
     }
+    
 }
 
 module.exports= controller;

@@ -36,4 +36,6 @@ router.get('/:id', controller.read);
 // DELETE - localhost:3000/products/:id
 router.delete('/:id', controller.delete);
 
+
+
 module.exports = router;

@@ -1,8 +1,9 @@
 const path = require ("path")
+let products = require ("../data/products.json")
 
 const controller = {
     index: (req, res)=>{
-        res.render('index', {product: product} )
+        res.render('index',  )
     },
     login: (req, res)=>{
         res.render('login',)
@@ -17,15 +18,16 @@ const controller = {
         res.render('shoppingCart',)
     },
     products: (req, res)=>{
-        res.render('products',)
+        res.render('products', {products})
     },
     users: (req, res)=>{
         res.render('users',)
+    },
+    detail: (req,res) => {
+        const id = req.params.id
+        res.render("detail", {products, id})
     }
 }
 
-const product = {
-    name :"coca"
-}
 
 module.exports =  controller ;

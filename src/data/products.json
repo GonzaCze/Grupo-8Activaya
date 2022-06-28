@@ -1,9 +1,1 @@
-[   
-    {"pdtID":"1",
-    "pdtName":"florchita",
-    "pdtImage":"1656350819129_pdtImage.jpeg",
-    "pdtDescription":"Rica rica!!! ",
-    "pdtCategory":"snacks",
-    "pdtCapacity":"1",
-    "pdtPrice":"250"}
-]
+[{"pdtID":"1","pdtName":"Antares Honey Beer","pdtImage":"1656355602122_pdtImage.png","pdtDescription":"Cerveza rubia, gran espuma y sabor. Contiene miel.","pdtCategory":"beer","pdtCapacity":"350","pdtPrice":"400"},{"pdtID":"2","pdtName":"Antares Barley Wine","pdtImage":"1656355662845_pdtImage.png","pdtDescription":"Cerveza amarga con un gran porcentaje de alcohol.","pdtCategory":"beer","pdtCapacity":"350","pdtPrice":"400"},{"pdtID":"3","pdtName":"Antares Carava","pdtImage":"1656355725123_pdtImage.png","pdtDescription":"Una edición limitada de Antares, especial para la caravana del verano.","pdtCategory":"beer","pdtCapacity":"350","pdtPrice":"400"},{"pdtID":"4","pdtName":"Antares Catalina","pdtImage":"1656355780028_pdtImage.png","pdtDescription":"Una cerveza para tomar entre amigos, liviana, dulce,","pdtCategory":"beer","pdtCapacity":"350","pdtPrice":"400"},{"pdtID":"5","pdtName":"Cuatrotres","pdtImage":"1656355834469_pdtImage.png","pdtDescription":"La cerveza que gano el mundial cervecero en Alemania. Sin palabras.","pdtCategory":"beer","pdtCapacity":"350","pdtPrice":"400"},{"pdtID":"6","pdtName":"Antares Centinela","pdtImage":"1656355906078_pdtImage.png","pdtDescription":"Mucha malta, fermentación por 5 meses, única en su tipo.","pdtCategory":"beer","pdtCapacity":"350","pdtPrice":"400"},{"pdtID":"7","pdtName":"Imperial Staut","pdtImage":"1656355963325_pdtImage.png","pdtDescription":"Cerveza de trigo añejado, sabor muy artesanal.","pdtCategory":"beer","pdtCapacity":"350","pdtPrice":"400"},{"pdtID":"8","pdtName":"Antares Kolsch","pdtImage":"1656356016229_pdtImage.png","pdtDescription":"El caballito de batalla de Antares. Frescura y pureza.","pdtCategory":"beer","pdtCapacity":"350","pdtPrice":"400"},{"pdtID":"9","pdtName":"Antares Porter","pdtImage":"1656356057668_pdtImage.png","pdtDescription":"No hay palabras para describir esta cerveza.","pdtCategory":"beer","pdtCapacity":"350","pdtPrice":"400"}]

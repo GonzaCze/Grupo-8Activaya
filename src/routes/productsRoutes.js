@@ -28,13 +28,13 @@ router.post('/', uploads.single('pdtImage') ,controller.add);//se puede colocar 
 // GET - localhost:3000/products/edit/:id
 router.get('/edit/:id', controller.edit);
 // PUT - localhost:3000/products/id
-router.put('/:id', controller.update);
+// router.put('/:id', controller.update);
 
 // GET - localhost:3000/products/:id
-router.get('/:id', controller.detail);
+// router.get('/:id', controller.detail);
 
 // DELETE - localhost:3000/products/:id
-router.delete('/:id', controller.delete);
+// router.delete('/:id', controller.delete);
 
 
 

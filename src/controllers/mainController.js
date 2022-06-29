@@ -1,4 +1,6 @@
+const { fstat } = require("fs")
 const path = require ("path")
+const fs = require ("fs")
 
 let products = require ("../data/products.json")
 
@@ -20,7 +22,7 @@ const controller = {
         res.render('shoppingCart',)
     },
     products: (req, res)=>{
-        res.render('products', {products})
+         res.render('products', {products})
     },
     users: (req, res)=>{
         res.render('users',)
@@ -37,8 +39,54 @@ const controller = {
         }else{
             res.send('no hubo coincidencia')
         }
+    },
+    delete: (req,res) => {
+        console.log (req.body)
+        let id = req.params.id
+        products = products.filter ((element) => String(element.pdtID) !==id ) 
+        
+        fs.writeFileSync (
+            path.join (__dirname, "../data/products.json"),
+            JSON.stringify(products, null, 4),
+            {
+                encoding: "utf-8",
+            }
+        );
+        res.render ("products", {products})
+    },
+    buttonEdit: (req,res) => {
+        let id = req.params.id
+        res.render("edit", {products, id})
+    },
+    editar: (req,res) => {
+        let id = req.params.id
+        console.log (id + "holaa")
+        console.log (req.body)
+        console.log (req.body.pdtID)
+
+        let file = req.file
+        const {pdtID, pdtName, pdtCategory, pdtCapacity, pdtPrice, pdtDescription} = req.body;
+        products.forEach (element => {
+            if (String(element.pdtID) == id) 
+            {
+                element.pdtID = pdtID;
+                element.pdtName = pdtName;
+                element.pdtDescription = pdtDescription;
+                element.pdtCategory = pdtCategory;
+                element.pdtCapacity = pdtCapacity;
+                element.pdtPrice = pdtPrice;
+            }})
+
+            fs.writeFileSync (
+                path.join (__dirname, "../data/products.json"),
+                JSON.stringify(products, null, 4),
+                {
+                    encoding: "utf-8",
+                }
+            );
+            res.render ("products", {products})
+            }
     }
-}
 
 
 module.exports =  controller ;

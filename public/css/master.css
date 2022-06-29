@@ -342,6 +342,7 @@ ul{
 	line-height: 40px;
 	border-radius: 50%;
 	color: #ffffff;
+    padding: 12px;
 	transition: all 0.5s ease;
 }
 .footer-colums .social-links a:hover{

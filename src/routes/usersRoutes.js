@@ -26,14 +26,14 @@ router.get('/register', users.create);
 router.post('/', uploads.single('userImage') ,users.add);//se puede colocar uploads.any()para que reciba muchas archivos.
 
 // GET - localhost:3000/users/edit/:id
-router.get('/edit/:id', users.edit);
+// router.get('/edit/:id', users.edit);
 // PUT - localhost:3000/users/id
-router.put('/:id', users.update);
+// router.put('/:id', users.update);
 
 // GET - localhost:3000/users/:id
-router.get('/:id', users.read);
+// router.get('/:id', users.read);
 
 // DELETE - localhost:3000/users/:id
-router.delete('/:id', users.delete);
+// router.delete('/:id', users.delete);
 
 module.exports = router;

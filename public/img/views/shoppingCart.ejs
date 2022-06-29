@@ -1,0 +1,48 @@
+<html lang="en">
+     <!-- Head -->
+<head>
+        <%- include('./partials/head.ejs') %>
+        <link href="/css/shoppingCart.css" rel="stylesheet" type="text/css">
+        <title>Carrito de Compras</title>
+</head>
+<body>
+   <!-- Header -->
+   <%- include('./partials/header.ejs')%>
+    <main>
+    <div class="Conteiner1">
+        <div class="Conteiner2A">
+            <div class="Conteiner3A">
+                <h5>Producto</h5>
+                <div class="Conteiner4A">
+                    <img src="/img/Antares-caravana.png">
+                    <p> Cerveza Antares 473 ML</p>
+                </div>
+            </div>
+            <div class="Conteiner5A">
+                <h5>Cantidad</h5>
+                <div class="cantidadButton">
+                    <button type="button">-</button>
+                    <input type="text" required="" pattern="[0-9]+" placeholder="0">
+                    <button type="button">+</button>
+                </div>
+            </div>
+            <div class="Conteiner5B">
+                <h5>Precio</h5>
+                <h3>$230</h3>
+            </div>
+        </div>
+
+        <div class="Cointener2B">
+            <h4 class="totalPedido">Total del Pedido</h4>
+            <div class="Conteiner4B">
+                <h4>Total a pagar: $230</h4>
+            </div>
+            <div class="Conteiner4C">
+                <input class="buttonCupon" type="text" placeholder="Cúpon Descuento">
+                <button type="text">Confirmar Compra</button>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

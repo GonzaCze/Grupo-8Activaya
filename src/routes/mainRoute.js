@@ -14,6 +14,5 @@ mainRoute.get("/detalle/:id", mainController.detail);
 mainRoute.get("/editar/:id", mainController.buttonEdit)
 // mainRoute.get(':id/edit', mainController.edit)
 mainRoute.delete ("/:id", mainController.delete)
-mainRoute.put ("/products/:id", mainController.editar)
-
+mainRoute.put ("/editado/:id", mainController.editB)
 module.exports = mainRoute;

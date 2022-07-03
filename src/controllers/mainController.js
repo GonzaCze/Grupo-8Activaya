@@ -1,4 +1,3 @@
-const { fstat } = require("fs")
 const path = require ("path")
 const fs = require ("fs")
 
@@ -41,7 +40,6 @@ const controller = {
         }
     },
     delete: (req,res) => {
-        console.log (req.body)
         let id = req.params.id
         products = products.filter ((element) => String(element.pdtID) !==id ) 
         
@@ -58,35 +56,33 @@ const controller = {
         let id = req.params.id
         res.render("edit", {products, id})
     },
-    editar: (req,res) => {
+    editB: (req,res) => {
         let id = req.params.id
-        console.log (id + "holaa")
-        console.log (req.body)
-        console.log (req.body.pdtID)
 
-        let file = req.file
-        const {pdtID, pdtName, pdtCategory, pdtCapacity, pdtPrice, pdtDescription} = req.body;
-        products.forEach (element => {
-            if (String(element.pdtID) == id) 
-            {
-                element.pdtID = pdtID;
-                element.pdtName = pdtName;
-                element.pdtDescription = pdtDescription;
-                element.pdtCategory = pdtCategory;
-                element.pdtCapacity = pdtCapacity;
-                element.pdtPrice = pdtPrice;
-            }})
-
-            fs.writeFileSync (
-                path.join (__dirname, "../data/products.json"),
-                JSON.stringify(products, null, 4),
+            const {pdtName, pdtCategory, pdtCapacity, pdtPrice, pdtDescription} = req.body;
+            
+            products.forEach (element => {
+                if (String(element.pdtID) == id) 
                 {
-                    encoding: "utf-8",
-                }
-            );
-            res.render ("products", {products})
-            }
-    }
+                    element.pdtName = pdtName;
+                    element.pdtDescription = pdtDescription;
+                    element.pdtCategory = pdtCategory;
+                    element.pdtCapacity = pdtCapacity;
+                    element.pdtPrice = pdtPrice;
+                }})
+    
+                fs.writeFileSync (
+                    path.join (__dirname, "../data/products.json"),
+                    JSON.stringify(products, null, 4),
+                    {
+                        encoding: "utf-8",
+                    }
+                );
+    res.render ("products", {products})
+}
+
+}
+      
+module.exports =  controller;
 
 
-module.exports =  controller ;

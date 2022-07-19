@@ -1,46 +1,44 @@
 <html lang="en">
      <!-- Head -->
-     <head>
+  <head>
         <%- include('./partials/head.ejs') %>
         <link href="/css/creacion.css" rel="stylesheet" type="text/css">
         <title>Marcas</title>
-    </head> 
-    <body>
+  </head> 
+  <body>
     <!-- Header -->
     <%- include('./partials/header.ejs')%>
-    <body>
-        <section class="main-section">
-          <div class="slider">
-              <ul>
-              
-              <li><img src="/img/Slider-3-Cuotas.png" alt=""></li>
-              <li><img src="/img/Slider-Heineken.png" alt=""></li>
-              <li><img src="/img/SaltaCautiva-slider.png" alt=""></li>
-              <li><img src="/img/Schneider-slider.png" alt=""></li>
-              <!-- <li><img src="/img/slider-JWalker.png" alt=""></li> -->
-              </ul>
-          </div>
-        </section>
-        <main class="main-products">
-          <div class="products-container">
-            <h1>Cervezas Premium</h1>
-            <section class="products">
-              <% for (let i = 0; i<products.length ; i++) { %>
-               <div class="main-article">
-                <a href="/detalle/<%= products[i].pdtID%>">
+
+    <section class="main-section">
+      <div class="slider">
+        <ul>
+          <li><img src="/img/Slider-3-Cuotas.png" alt=""></li>
+          <li><img src="/img/Slider-Heineken.png" alt=""></li>
+          <li><img src="/img/SaltaCautiva-slider.png" alt=""></li>
+          <li><img src="/img/Schneider-slider.png" alt=""></li>
+          <!-- <li><img src="/img/slider-JWalker.png" alt=""></li> -->
+        </ul>
+      </div>
+    </section>
+    <main class="main-products">
+      <div class="products-container">
+        <h1>Productos</h1>
+          <section class="products">
+            <% for (let i = 0; i<products.length ; i++) { %>
+              <div class="main-article">
+                <a href="/products/detalle/<%= products[i].pdtID%>">
                   <img src="/uploads/products/<%=products[i].pdtImage %>"  alt="" class="product-img">
                 </a>
-                <div class="product-description">
-                  <h3 class="product-title"><%= products[i].pdtName %></h3>
-                  <span class="price">$ <%= products[i].pdtPrice %></span>
-                </div>
+              <div class="product-description">
+                <h3 class="product-title"><%= products[i].pdtName %></h3>
+                <span class="price">$ <%= products[i].pdtPrice %></span>
+              </div>
               </div>
               <%}%>
-              
             </section>
           </div>
-        </main>
-        <main class="main-products">
+    </main>
+    <!-- <main class="main-products">
           <div class="products-container">
             <h1>Cervezas Rubias </h1>
             <section class="products">
@@ -103,9 +101,6 @@
             </section>
             </div>
             
-        </main>
-        </body>
-
-    </body>     
-</body>
+        </main> -->
+  </body>
 </html>

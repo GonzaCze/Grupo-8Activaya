@@ -1,56 +1,92 @@
-const { json } = require('express');
 const fs = require('fs');
 const path = require('path');
+let users = require('../data/users.json');
 
-const filePath = path.resolve(__dirname, '../data/users.json');
-const productArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-
-console.log(productArray);
-
-const users = {
-    browse: (req, res) =>{
-        res.send('estamos en /users');
+const controller = {
+    login: (req, res)=>{
+        res.render('login',)
     },
-    read: (req, res) => {
-        const userId = req.params.id
-        res.send('estamos en /users/' + userId);
+    processLogin: (req, res)=>{
+        res.send('proceso de login')
     },
-    create: (req, res) => {
-       //res.send('Estoy en FORMULARIO para crear producto');
+    listAll: (req, res) =>{
+        res.render('users', {users} );     
+    },
+    register: (req, res) => {
+       //res.send('Estoy en FORMULARIO para crear usuario');
        res.render('register')
     },
-    edit: (req, res) => {
-        const userId = req.params.id
-        res.send('formulario que edita un usuario' + userId);
+    processRegister: (req, res) => {
+        console.log(req.body)
+        const newID = users[(users.length - 1)].userID + 1;
+        let file = req.file;
+        let newUser = {
+            userID: newID,
+            userName: req.body.userName,
+            userLastN: req.body.userLastN,
+            userPass: req.body.userPass,
+            userCategory: req.body.userCategory,
+            userImage: `${file.filename}`,
+        }
+        users.push(newUser);
+        fs.writeFileSync(
+            path.join(__dirname, '../data/users.json'),
+            JSON.stringify(users, null, 4),
+                {
+                    encoding: 'utf-8',
+                }
+            );
+            console.log('FILE SAVED');
+            res.render('users', {users});         
     },
-    add: (req, res) => {
-     
-        // Se guarda
-        productArray.push(
-            {
-                 userID: req.body.userID,
-                 userName: req.body.userName,
-                 userLastN: req.body.userLastN,
-                 userPass: req.body.userPass,
-                 userCategory: req.body.userCategory,
-                 userImage: req.file ? req.file.filename : 'no envio imagen',
-            }
-        )
-        fs.writeFileSync(filePath, JSON.stringify(productArray, null, ''))
-        console.log('FILE SAVED');
-        
-        //  Y luego rediecionar
-        res.redirect('/user?saved=true');
+    profile: (req, res) =>{
+        let id= req.params.id;
+        console.log(id)
+        let profile = users.find((item) => item.userID == id);
+        res.render('profile', {profile})
+    },
+    delete: (req, res)=>{
+        let id = req.params.id;
+        console.log(id)
+        users = users.filter((item)=> item.userID != id);
+        fs.writeFileSync(
+            path.join(__dirname, '../data/users.json'),
+            JSON.stringify(users, null, 4),
+                {
+                    encoding: 'utf-8',
+                }
+            );
+            res.render('users', {users})
+    },
+    edit: (req, res)=>{
+        let id= req.params.id;
+        let userInfo = users.find((item) => item.userID == id);
+        res.render('userEdit', {userInfo})
+    },
+    processEdit: (req, res)=>{
+        let id = req.params.id;
+        let file = req.file;
+        const {userName, userLastN, userEmail, userPass, userCategory, userImage} = req.body;
+        users.forEach(item =>  {
+            if(item.userID == id){
+                item.userName = userName;
+                item.userLastN = userLastN;
+                item.userEmail = userEmail;
+                item.userPass = userPass;
+                item.userCategory = userCategory;
+                item.userImage = `${file.filename}`;
+            };
+            fs.writeFileSync(
+                path.join(__dirname, '../data/users.json'),
+                JSON.stringify(users, null, 4),
+                    {
+                        encoding: 'utf-8',
+                    }
+                );
+                res.render('users', {users})    
 
-    },
-    update: (req, res) => {
-        const userId = req.params.id
-        res.send('vamos actualizar los datos de un usuario' + userId);
-    },
-    delete: (req, res) => {
-        const userId = req.params.id
-        res.send('vamos eliminar / borrar del producto' + userId);
+        })
     }
 }
 
-module.exports= users;
+module.exports= controller;

@@ -1,0 +1,35 @@
+<html lang="en">
+     <!-- Head -->
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link href="/css/creacion.css" rel="stylesheet" type="text/css">
+    <title>Perfil</title>
+  </head> 
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs')%>
+    <h1 class="titleDetail">Perfil</h1>
+    <br/>
+    <main class="main-products">
+      <!-- div solo de imagen -->
+      <div class="products-container">
+        <div class="main-article"> 
+          <img src="/uploads/users/<%=profile.userImage%>">
+        </div>
+      </div>
+      <!-- div datos del usuario -->  
+        <div class="descriptionProduct">
+          <h1 class="tittlePdt"><%=profile.userCategory %></h1>
+          <h4 class="pricePdt"><%=profile.userName %></h4>
+          <h4 class="capacityPdt"><%=profile.userLastN %></h4>
+          <h4 class='descriptionPdt'><%=profile.userEmail %></h4>
+          <a href="/users/userEdit/<%=profile.userID %> ">
+            <button>Editar</button>
+          </a>
+          <form  method="post"  action="/users/<%=profile.userID%>?_method=DELETE">
+            <button type="submit">Borrar</button>
+          </form>
+        </div>
+    </main>
+  </body>
+</html>

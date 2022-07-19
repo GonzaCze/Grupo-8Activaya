@@ -1,92 +1,46 @@
 <html lang="en">
      <!-- Head -->
-     <head>
-        <%- include('./partials/head.ejs') %>
-        <link href="/css/creacion.css" rel="stylesheet" type="text/css">
-        <title>Marcas</title>
-    </head> 
-    <body>
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link href="/css/creacion.css" rel="stylesheet" type="text/css">
+    <title>Marcas</title>
+  </head> 
+  <body>
     <!-- Header -->
     <%- include('./partials/header.ejs')%>
-    <body>
-        <section class="main-section">
-          <div class="slider">
-              <ul>
-              
-              <li><img src="/img/Slider-3-Cuotas.png" alt=""></li>
-              <li><img src="/img/Slider-Heineken.png" alt=""></li>
-              <li><img src="/img/SaltaCautiva-slider.png" alt=""></li>
-              <li><img src="/img/Schneider-slider.png" alt=""></li>
-              <!-- <li><img src="/img/slider-JWalker.png" alt=""></li> -->
-              </ul>
-          </div>
-        </section>
-        <main class="main-products">
-          <div class="products-container">
-            <h1>Cervezas Premium</h1>
-            <section class="products">
+    <section class="main-section">
+      <div class="slider">
+        <ul>
+          <li><img src="/img/Slider-3-Cuotas.png" alt=""></li>
+          <li><img src="/img/Slider-Heineken.png" alt=""></li>
+          <li><img src="/img/SaltaCautiva-slider.png" alt=""></li>
+          <li><img src="/img/Schneider-slider.png" alt=""></li>
+          <!-- <li><img src="/img/slider-JWalker.png" alt=""></li> -->
+        </ul>
+      </div>
+    </section>
+    <main class="main-products">
+      <div class="products-container">
+        <h1>Usuarios</h1>
+          <section class="products">
+            <% for (let i = 0; i<users.length ; i++) { %>
               <div class="main-article">
-                <img src="/img/Antares-Barleywine.png" alt="" class="product-img">
+                <a href="">
+                  <img src="/uploads/users/<%=users[i].userImage %>"  alt="" class="product-img">
+                </a>
                 <div class="product-description">
-                  <h3 class="product-title">Barley Wine</h3>
-                  <span class="price">$230</span>
+                  <h3 class="product-title"><%= users[i].userCategory %></h3>
+                  <h4 class="product-title"><%= users[i].userName %></h4>
+                  <a href="/users/profile/<%= users[i].userID %>"><button>Perfil</button></a>
                 </div>
               </div>
-              <div class="main-article">
-                <img src="/img/Antares-caravana.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Caravana</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-CuatroTres.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">CuatroTres</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-ElCentinela.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">El Centinela</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-imperialStaut.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Imperial Staut</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-kolsch.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Kolsch</h3>
-                  <span class="price">$230</span>
-                </div>
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares-Catalina.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Catalina la Grande</h3>
-                  <span class="price">$230</span>
-                </div>       
-              </div>
-              <div class="main-article">
-                <img src="/img/Antares_HoneyBeer.png" alt="" class="product-img">
-                <div class="product-description">
-                  <h3 class="product-title">Honey Beer</h3>
-                  <span class="price">$230</span>
-                </div>       
-              </div>
+              <%}%>
             </section>
           </div>
-        </main>
-        <main class="main-products">
+    </main>
+    <!-- <main class="main-products">
           <div class="products-container">
-            <h1>Cervezas Rubias</h1>
+            <h1>Cervezas Rubias </h1>
             <section class="products">
               <div class="main-article">
                 <img src="/img/Antares-Barleywine.png" alt="" class="product-img">
@@ -147,9 +101,13 @@
             </section>
             </div>
             
-        </main>
-        </body>
-
-    </body>     
-</body>
+        </main> -->
+  </body>
 </html>
+<!-- <div>
+  <% for (let i=0; i<users.length; i++) { %>
+    <p> <%= users[i].userName %> </p>
+
+ <% } %> 
+  
+  </div> -->

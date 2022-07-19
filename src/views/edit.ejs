@@ -5,27 +5,20 @@
         <!-- <link href="/css" rel="stylesheet" type="text/css"> -->
         <title>Edicion de producto</title>
     </head>
-<body>
+    <body>
     <!-- Header -->
-    <%- include('./partials/header.ejs')%>
-    <main class="main-login">    
-        <div class="login">
-            <h1>Editar</h1>
-            
-          
-            
-            <% for (let i = 0; i < products.length ; i++) { %>
+        <%- include('./partials/header.ejs')%>
+        <main class="main-login">    
+            <div class="login">
+            <h1>Editar un Producto</h1>
+                <% for (let i = 0; i < products.length ; i++) { %>
                 <% if (String(products[i].pdtID) === id) { %>
-                    
-                        <form method="POST" action="/editado/<%= products[i].pdtID%>?_method=PUT">
-                            <input type="text" name="pdtName" value="<%= products[i].pdtName%>">
-                          <!-- <input type="number"  name="pdtID" id="id" value="cantidad" required>
-                          <input type="submit" value="Agregar al Carrito" id="registro"> -->
-                            <p>
-                                <label for="Descripcion">Descripcion:</label>
-                                <textarea name="pdtDescription" id="Descripcion" cols="30" rows="10" value="" required>Breve descripcion del producto</textarea>
-                            </p>
-                            <p>
+                <form method="POST" action="/products/editado/<%= products[i].pdtID%>?_method=PUT">
+                    <p>
+                        <label for="nombre">Nombre:</label>  
+                        <input id="nombre"  type="text" name="pdtName" value="<%= products[i].pdtName%>">
+                    </p> 
+                    <p>
                                 <label for="category">Categoria:</label>
                                 <select name="pdtCategory" id="category" value="<%= products[i].pdtCategory %>" required>
                                     <option value="beer">Cerveza</option>
@@ -38,17 +31,20 @@
                             </p>
                             <p>
                                 <label for="capacity">Contenido(ml o gr):</label>
-                                <input type="number" name="pdtCapacity" id="capacity" value="<%= products[i].pdtCapacity %>" required>
+                                <input type="text" name="pdtCapacity" id="capacity" value="<%= products[i].pdtCapacity %>" required>
                             </p>
                             <p>
                                 <label for="price">Precio:</label>
                                 <input type="number" name="pdtPrice" id="price" value="<%= products[i].pdtPrice %>" required>
                             </p>
-                            
+                            <p>
+                                <label for="Descripcion">Descripcion:</label>
+                                <textarea name="pdtDescription" id="Descripcion" cols="50" rows="2" value="<%= products[i].pdtDescription %>" required></textarea>
+                            </p>
                             <button type="submit"> Guardar </button>
                           </form>
                 <% }} %>
-                        </div>
-                    </main>
-                </body> 
-                </html> 
+            </div>
+        </main>
+    </body> 
+</html> 

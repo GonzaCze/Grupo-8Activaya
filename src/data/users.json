@@ -1,1 +1,27 @@
-[{"userID":"1","userName":"Sergio","userLastN":"DAngelo","userPass":"123456","userCategory":"admin","userImage":"1656351022261_userImage.jpeg"}]
+[
+    {
+        "userID": 1,
+        "userName": "Sergio",
+        "userLastN": "DAngelo",
+        "userEmail": "sergiodangelo94@gmail.com",
+        "userPass": "123456",
+        "userCategory": "Admin",
+        "userImage": "1658163056373-img.jpg"
+    },
+    {
+        "userID": 2,
+        "userName": "Ignacio ",
+        "userLastN": "Pegels",
+        "userPass": "123456",
+        "userCategory": "Admin",
+        "userImage": "1658158641545-img.jpg"
+    },
+    {
+        "userID": 3,
+        "userName": "Gonzalo",
+        "userLastN": "Czerevin",
+        "userPass": "123456",
+        "userCategory": "Admin",
+        "userImage": "1658158710644-img.jpg"
+    }
+]

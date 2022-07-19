@@ -1,39 +1,35 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const controller = require('../controllers/usersController');
+const upload = require('../middlewares/userMulter')
 
-const multer = require('multer');
-const myStorage = multer.diskStorage({
-    destination: function (req, file, cb){
-        console.log('FILE-INFO: ', file)
-        cb(null, './public/uploads/users') // customizamos nuesta storage... 
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + '_' + file.fieldname + path.extname(file.originalname))
-    }
-});                                     ///el archivo ingresara con el 'name' del formulario
 
-const uploads = multer({storage: myStorage});
 
-const users = require('../controllers/usersController');
+// RUTAS - localhost:3000/users/...
+//Ingresar
+router.get('/login', controller.login);
+//Proceso de Ingreso
+router.post('/login', [
+    check('email').isEmail().withMessage('Email Invalido'),
+    check('password').isLength({min:8}).withMessage('La Contrasena es invalida')
+],controller.processLogin);
+//ver todos los usuarios
+router.get('/users', controller.listAll);
 
-// GET - localhost:3000/users
-router.get('/', users.browse);
+//Formulario de registro
+router.get('/register', controller.register);
+// Procesar el registro
+router.post('/register', upload.single('userImage') ,controller.processRegister);//se puede colocar uploads.any()para que reciba muchas archivos.
 
-// GET - localhost:3000/users/create => redirecciona una view en el controller
-router.get('/register', users.create);
-// POST - localhost:3000/users
-router.post('/', uploads.single('userImage') ,users.add);//se puede colocar uploads.any()para que reciba muchas archivos.
+//Perfil - detalle del usuario
+router.get('/profile/:id', upload.single('userImage'),controller.profile) 
 
-// GET - localhost:3000/users/edit/:id
-// router.get('/edit/:id', users.edit);
-// PUT - localhost:3000/users/id
-// router.put('/:id', users.update);
+//Editar un Perfil
+router.get('/userEdit/:id', controller.edit)
+// Proceso de Edicion
+router.put('/userEdit/:id', upload.single('userImage') ,controller.processEdit)
 
-// GET - localhost:3000/users/:id
-// router.get('/:id', users.read);
-
-// DELETE - localhost:3000/users/:id
-// router.delete('/:id', users.delete);
+// Borrar
+router.delete('/:id', controller.delete)
 
 module.exports = router;

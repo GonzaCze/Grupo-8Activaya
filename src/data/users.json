@@ -4,24 +4,26 @@
         "userName": "Sergio",
         "userLastN": "DAngelo",
         "userEmail": "sergiodangelo94@gmail.com",
-        "userPass": "123456",
+        "userPass": "$2a$10$tEX.hZKmo08eggrQx2c02eSSSemkFKJrw1Ys2iODooqklOhxvELK2",
         "userCategory": "Admin",
-        "userImage": "1658163056373-img.jpg"
+        "userImage": "1658457510706-img.jpg"
     },
     {
         "userID": 2,
-        "userName": "Ignacio ",
-        "userLastN": "Pegels",
-        "userPass": "123456",
+        "userName": "Gonzalo",
+        "userLastN": "Czerevin",
+        "userEmail": "gonza@gmail.com",
+        "userPass": "$2a$10$SLXAkZm0r49Aq/PyQUcH2eZ3me0k3XgB8InfBkyzAq.zHvUk1E0cq",
         "userCategory": "Admin",
-        "userImage": "1658158641545-img.jpg"
+        "userImage": "1658457558697-img.jpg"
     },
     {
         "userID": 3,
-        "userName": "Gonzalo",
-        "userLastN": "Czerevin",
-        "userPass": "123456",
+        "userName": "Ignacio",
+        "userLastN": "Pegels",
+        "userEmail": "ignacio@gmail.com",
+        "userPass": "$2a$10$6Pu8pn.ofOAbHA7k3erzBuzFikHRPaE3qkDOwMNW7ClTmPYI9YVmu",
         "userCategory": "Admin",
-        "userImage": "1658158710644-img.jpg"
+        "userImage": "1658457678193-img.jpg"
     }
 ]

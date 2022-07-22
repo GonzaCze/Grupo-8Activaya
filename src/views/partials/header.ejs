@@ -20,14 +20,19 @@
         <label class="fa-solid fa-bars" for="hamburguer-button"></label>
         <!-- <i class="fa-solid fa-bars"></i> -->
     <nav class="main-navbar">
+      <% if (locals.isLogged) { %>
       <ul class="bottom-navBar">
-        <!-- <li> <a href="#">Marcas</a></li> -->
         <li> <a href="/users/users">Usuarios</a></li>
-        <li> <a href="/users/register">Registrarse</a></li>
-        <li> <a href="/users/login">Login</a></li>
         <li> <a href="/products/products">Productos</a></li>
         <li> <a href="/products/create">CrearPDT</a></li>
         <li> <a href="/products/shoppingCart"> <i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li> <a href="/users/userLogged">Hi, <%= locals.userLogged.userName %> </a></li>
+      </ul> 
+      <%  } else { %>
+      <ul class="bottom-navBar">
+        <li> <a href="/users/register">Registrarse</a></li>
+        <li> <a href="/users/login">Login</a></li>
       </ul>
+    <% } %>
     </nav>
 </header>

@@ -1,0 +1,30 @@
+<html lang="en">
+     <!-- Head -->
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link href="/css/creacion.css" rel="stylesheet" type="text/css">
+    <title>Perfil</title>
+  </head> 
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs')%>
+    <h1 class="titleDetail"> Mi Perfil </h1>
+    <br/>
+    <main class="main-products">
+      <!-- div solo de imagen -->
+      <div class="products-container">
+        <div class="main-article"> 
+          <img src="/uploads/users/<%=user.userImage%>">
+        </div>
+      </div>
+      <!-- div datos del usuario -->  
+        <div class="descriptionProduct">
+          <h1 class="tittlePdt"><%=user.userCategory%></h1>
+          <h4 class="pricePdt"><%=user.userName%></h4>
+          <h4 class="capacityPdt"><%=user.userLastN%></h4>
+          <h4 class='descriptionPdt'><%=user.userEmail%></h4>
+          <a href="/users/logout"><h5>Cerrar Sesion</h5></a>
+        </div>
+    </main>
+  </body>
+</html>

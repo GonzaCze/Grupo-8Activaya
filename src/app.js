@@ -2,6 +2,10 @@ const express = require("express");
 const session = require('express-session');
 const cookies = require('cookie-parser')
 
+//Base de datos
+const sequelize = require ("../database/models/db")
+const User = require ("../database/models/User")
+
 const app = express ();
 const path =  require ("path");
 const methodOverride = require ("method-override");
@@ -26,7 +30,17 @@ app.use(session({
 app.use(cookies());
 app.use(userLoggedMiddle);
 
+//probandoRuta
+app.get("/chiche", (req,res) => {
 
+    User.create({
+        name: "Igna",
+        birtdhday: new Date (1993, 7, 5)
+    }).then(user => res.json(user))
+
+    // User.findAll().then((resultado) => res.json(resultado))
+    
+})
 
 
 // Routes
@@ -35,9 +49,16 @@ app.use('/products', require('./routes/productsRoutes'));
 app.use('/users', require('./routes/usersRoutes'));
 
 
+//Levantando el Servidor
 const PORT = 3000;
 app.listen(PORT, ()=>{
     console.log('Server corriendo en port: ', PORT)
+
+// Conectarse a la base de Datos cuando se levanta el servidor
+sequelize.sync({force:true}).then(() => {
+    console.log("Se levanto la base de datos")
+}).catch((error) => {console.log(`Se encontro un error`, error)})
+
 })
 
 

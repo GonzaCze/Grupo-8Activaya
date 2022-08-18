@@ -19,8 +19,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 
 //Middlewares
+//Para poder rellenar el req.body
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
+
 app.use(methodOverride ("_method"));
 app.use(session({
     secret: 'SHhh secreto!!',
@@ -30,17 +32,6 @@ app.use(session({
 app.use(cookies());
 app.use(userLoggedMiddle);
 
-//probandoRuta
-app.get("/chiche", (req,res) => {
-
-    User.create({
-        name: "Igna",
-        birtdhday: new Date (1993, 7, 5)
-    }).then(user => res.json(user))
-
-    // User.findAll().then((resultado) => res.json(resultado))
-    
-})
 
 
 // Routes
@@ -55,7 +46,7 @@ app.listen(PORT, ()=>{
     console.log('Server corriendo en port: ', PORT)
 
 // Conectarse a la base de Datos cuando se levanta el servidor
-sequelize.sync({force:true}).then(() => {
+sequelize.sync({force:false}).then(() => {
     console.log("Se levanto la base de datos")
 }).catch((error) => {console.log(`Se encontro un error`, error)})
 

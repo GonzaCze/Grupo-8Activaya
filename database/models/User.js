@@ -1,15 +1,23 @@
 const {Model , DataTypes} = require ("sequelize");
-const sequelize = require("./db");
+const sequelize = require ("./db")
 
 
-
-class User extends Model {}
-User.init({
-    name: DataTypes.STRING,
-    birthday: DataTypes.DATE, 
-}, {
+const User = sequelize.define("users", {
+    userID: {
+        type: DataTypes.INTEGER,
+        primaryKey:true,
+        autoIncrement:true 
+    },
+    userName: DataTypes.STRING,
+    userLastN: DataTypes.STRING,
+    userEmail: DataTypes.STRING,
+    userPass: DataTypes.STRING,
+    userCategory: DataTypes.STRING,
+    userImage: DataTypes.BLOB,
+},
+{
     sequelize,
-    modelName: "user"
-});
+    timestamps:false
+})
 
 module.exports = User;

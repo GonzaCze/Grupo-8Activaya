@@ -3,22 +3,29 @@ const router = express.Router();
 const uploads = require('../middlewares/productMulter')
 const controller = require('../controllers/productsController');
 
-//GET - localhost:3000/products
-router.get('/products', controller.listAll);
+// Todo los productos
+router.get("/", controller.products)
 
-// GET - localhost:3000/products/create => redirecciona una view en el controller
-router.get('/create', controller.create);
-// POST - localhost:3000/products
-router.post('/products', uploads.single('pdtImage') ,controller.add);//se puede colocar uploads.any()para que reciba muchas archivos.
+// Aplicar filtros
+router.post("/filtro", controller.filter)
 
-router.get('/edit/:id', controller.edit);
+//Aplicar buscador
+router.get("/buscar", controller.search)
+
+//Crear Producto
 router.get('/create', controller.create);
-router.get('/products', controller.products);
+router.post('/create', uploads.single('pdtImage') ,controller.add);//se puede colocar uploads.any()para que reciba muchas archivos.
+
+// Detalle Producto
+router.get("/detalle/:id", controller.detail)
+
+//Modificar Producto
+router.get("/editar/:id", controller.edicionFormulario)
+router.put("/editar/:id", controller.editado)
+
+//Eliminar producto en proceso
+router.delete ("/eliminar/:id", controller.delete)
+
 router.get('/shoppingCart', controller.shoppingCart);
-router.get("/detalle/:id", controller.detail);
-router.get("/editar/:id", controller.buttonEdit)
-router.delete ("/:id", controller.delete)
-router.put ("/editado/:id", controller.editB)
-
 
 module.exports = router;

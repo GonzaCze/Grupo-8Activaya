@@ -1,103 +1,120 @@
 const fs = require('fs');
 const path = require('path');
 let products = require ("../data/products.json");
+const modelProducto = require ("../../database/models/Product")
+const category = require ("../../database/models/category")
+const asociation = require ("../../database/models/asociations")
+const { Op } = require("sequelize")
 
 const controller = {
-    listAll: (req, res) =>{
-        res.render('products',{products});
+    create: (req, res) => {
+        category.findAll()
+        .then()
+    .then((category) => {
+       res.render("create",{category})
+    })
+    },
+    products:(req,res) => {
+        const productos = modelProducto.findAll()
+        const categorias = category.findAll()
+        Promise
+        .all([productos, categorias])
+        .then(([products,category]) => {
+            res.render("products", {products,category})
+        }
+    )},
+    filter: (req,res) => {
+        const productos = modelProducto.findAll({
+            include: "Category",
+            where: {
+            CategoryId: req.body.pdtCategory
+        } 
+        })
+        const categorias = category.findAll()
+        Promise
+        .all([productos, categorias])
+        .then(([products,category]) => {
+            res.render("products", {products,category})
+        })
+    },
+        search: (req,res) => {
+            const search = `%${req.query.search}%`
+          const productos =  modelProducto.findAll({
+                where: {
+                pdtName: {[Op.like]:search}
+        }})
+        const categorias = category.findAll()
+        Promise
+        .all([productos, categorias])
+        .then(([products,category]) => {
+            res.render("products", {products,category})
+        })
     },
     detail: (req,res) => {
-        const id = req.params.id
-        res.render("detail", {products, id})
+        modelProducto.findByPk(req.params.id)
+        .then((products) => {
+            res.render("detail",{products})
+        })
     },
-    create: (req, res) => {
-       //res.send('Estoy en FORMULARIO para crear producto');
-       res.render('create')
+    edicionFormulario: (req,res) => {
+        modelProducto.findByPk(req.params.id)
+        .then((products) => {
+            res.render("edit",{products})
+        })
     },
-    edit: (req, res) =>{
-        const id = req.params.id
-        if(products.find(item => item.id == id)){
-            const productDetail = products.find((item)=> item.id == id);
-            res.render('edit', {productDetail, products});
-        }else{
-            res.send('no hubo coincidencia')
-        }
-    },
-    add: (req, res) => {
-            const newID = products[(products.length - 1)].pdtID + 1;
-            let file = req.file;
-            let newPdt = {
-                pdtID: newID,
-                pdtName: req.body.pdtName,
-                pdtDescription: req.body.pdtDescription,
-                pdtCategory: req.body.pdtCategory,
-                pdtCapacity: req.body.pdtCapacity,
-                pdtPrice: req.body.pdtPrice,
-                pdtImage: `${file.filename}`,
+    editado:(req,res) => {
+        console.log(req.body)
+        modelProducto.update({
+            pdtName: req.body.pdtName,
+            pdtDescription: req.body.pdtDescription,
+            pdtCategory: req.body.pdtCategory,
+            pdtCapacity: req.body.pdtCapacity,
+            pdtPrice: req.body.pdtPrice,
+        },
+        {
+            where: {
+                pdtID: req.params.id
             }
-            products.push(newPdt);
-            fs.writeFileSync(
-                path.join(__dirname, '../data/products.json'),
-                JSON.stringify(products, null, 4),
-                    {
-                        encoding: 'utf-8',
-                    }
-                );
-                console.log('FILE SAVED');
-                res.render('products', {products});         
+        }).then(() => {
+            modelProducto.findAll()
+        .then((products) => {
+            res.render("products", {products:products})
+        })
+    })},
+    add: (req, res) => {
+        let file = req.file
+        modelProducto.create({
+            pdtName: req.body.pdtName,
+            pdtDescription: req.body.pdtDescription,
+            category_id: req.body.pdtCategory,
+            CategoryId: req.body.pdtCategory,
+            pdtCapacity: req.body.pdtCapacity,
+            pdtPrice: req.body.pdtPrice,
+            pdtImage: `${file.filename}`
+
+        }).then(() => {
+            modelProducto.findAll()
+        .then((products) => {
+            res.redirect("/products")
+        })
+    })
+                 
         },
     shoppingCart: (req, res)=>{
         res.render('shoppingCart', {products})
     },
-    products: (req, res)=>{
-         res.render('products', {products})
-    },
-    update: (req, res) => {
-        const productId = req.params.id
-        res.send('vamos actualizar del producto' + productId);
-    },
     delete: (req,res) => {
-        let id = req.params.id
-        products = products.filter ((element) => String(element.pdtID) !==id ) 
-        
-        fs.writeFileSync (
-            path.join (__dirname, "../data/products.json"),
-            JSON.stringify(products, null, 4),
-            {
-                encoding: "utf-8",
+        modelProducto.destroy({
+            where: {
+                pdtID: req.params.id
             }
-        );
-        res.render ("products", {products})
-    },
-    buttonEdit: (req,res) => {
-        let id = req.params.id
-        res.render("edit", {products, id})
-    },
-    editB: (req,res) => {
-        let id = req.params.id
-
-            const {pdtName, pdtCategory, pdtCapacity, pdtPrice, pdtDescription} = req.body;
-            
-            products.forEach (element => {
-                if (String(element.pdtID) == id) 
-                {
-                    element.pdtName = pdtName;
-                    element.pdtDescription = pdtDescription;
-                    element.pdtCategory = pdtCategory;
-                    element.pdtCapacity = pdtCapacity;
-                    element.pdtPrice = pdtPrice;
-                }})
-    
-                fs.writeFileSync (
-                    path.join (__dirname, "../data/products.json"),
-                    JSON.stringify(products, null, 4),
-                    {
-                        encoding: "utf-8",
-                    }
-                );
-    res.render ("products", {products})
-}
-    
+        })
+    .then(() => {
+        modelProducto.findAll()
+    .then((products) => {
+        res.render("products", {products:products})
+    })
+})}
 }
 
 module.exports= controller;

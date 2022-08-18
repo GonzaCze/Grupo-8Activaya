@@ -25,5 +25,23 @@
         "userPass": "$2a$10$6Pu8pn.ofOAbHA7k3erzBuzFikHRPaE3qkDOwMNW7ClTmPYI9YVmu",
         "userCategory": "Admin",
         "userImage": "1658457678193-img.jpg"
+    },
+    {
+        "userID": 4,
+        "userName": "asdas",
+        "userLastN": "asdas",
+        "userEmail": "hola@gmail.com",
+        "userPass": "$2a$10$.wKxIeyHUvT0cAVrv6OXRettUDh9refqrqwRav70jYGlYjY.I5qky",
+        "userCategory": "Admin",
+        "userImage": "1659563467385-img.png"
+    },
+    {
+        "userID": 5,
+        "userName": "ignacio",
+        "userLastN": "pegels",
+        "userEmail": "i@gmail.com",
+        "userPass": "$2a$10$ibBdyyhnGb/XQXaH9eOVN.WOdv/T6CnBo8pFn8rFatmRfC6sUPo9y",
+        "userCategory": "Admin",
+        "userImage": "1659563499312-img.png"
     }
 ]

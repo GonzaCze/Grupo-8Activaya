@@ -13,20 +13,19 @@
     <main class="main-products">
           <!-- div solo de imagen -->
             <div class="products-container">
-            <% for (let i = 0; i<products.length ; i++) { %>
-                <% if (String(products[i].pdtID) === id) { %>
+            
                   <!-- div de la imagen -->
                 <div class="main-article"> 
-                <img src="/uploads/products/<%=products[i].pdtImage %>"  alt="" class="product-img"></a>
+                <img src="/uploads/products/<%=products.pdtImage %>"  alt="" class="product-img"></a>
               </div>
             </div>
             <!-- div datos del producto -->
             <div class="descriptionProduct">
-                <h1 class="tittlePdt"> <%= products[i].pdtName %> </h1> 
-                <h4 class="pricePdt"> <%= products[i].pdtPrice %> Ars</h4>
-                <h4 class="capacityPdt"> <%= products[i].pdtCapacity %> ml</h4>
-                <h4 class='descriptionPdt'><%= products[i].pdtDescription %> </h4>
-                
+                <h1 class="tittlePdt"> <%= products.pdtName %> </h1> 
+                <h4 class="pricePdt"> <%= products.pdtPrice %> Ars</h4>
+                <h4 class="capacityPdt"> <%= products.pdtCapacity %> ml</h4>
+                <h4 class='descriptionPdt'><%= products.pdtDescription %> </h4>
+            
                 <p> Podés retirar en nuestro local </p>
                 <p>Podés comprar como quieras
                   aceptamos tarjetas de crédito, débito, mercadopago.</p>
@@ -34,12 +33,11 @@
                   podés devolver tu pedido si no es lo que esperabas</p>
                 <p>Estamos disponibles para responder tus consultas
                   escribinos por el chat en vivo</p> 
-                  <form method="POST" action="/products/<%= products[i].pdtID%>?_method=DELETE">
+                  <form method="POST" action="/products/eliminar/<%= products.pdtID%>?_method=DELETE">
                   <button type="submit"> Borrar </button>
                 </form>
-                <a href="/products/editar/<%= products[i].pdtID %>"><button type="submit">Editar</button></a>
-                </div>
-              <%}}%>
+                <a href="/products/editar/<%= products.pdtID %>"><button type="submit">Editar</button></a>
+                </div>     
     </main>
   </body>     
 </html>

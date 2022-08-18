@@ -23,6 +23,17 @@
     <main class="main-products">
       <div class="products-container">
         <h1>Productos</h1>
+        <div class="category">
+          <form action="/products/filtro" method="post">
+          <h3>Categoria</h3>
+          <select name="pdtCategory">
+            <% category.forEach((category) => { %>
+              <option value="<%- category.id %>"><%- category.name %> </option>
+              <% }) %> 
+              <input type="submit" value="Buscar" id="registro">
+            </select>
+          </form>
+      </div>
           <section class="products">
             <% for (let i = 0; i<products.length ; i++) { %>
               <div class="main-article">

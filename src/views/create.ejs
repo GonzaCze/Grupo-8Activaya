@@ -11,7 +11,7 @@
     <main class="main-login">    
         <div class="login">
             <h1>Formulario para crear producto</h1>
-            <form action="/products/products" method="post" enctype="multipart/form-data">
+            <form action="/products/create" method="post" enctype="multipart/form-data">
             <p>
             <label for="name">Nombre del producto:</label>
             <input type="text" name="pdtName" id="name" required>
@@ -27,12 +27,9 @@
         <p>
             <label for="category">Categoria:</label>
             <select name="pdtCategory" id="category" required>
-                <option value="beer">Cerveza</option>
-                <option value="wine">Vino</option>
-                <option value="sparklin">Espumante</option>
-                <option value="distilled">Destilado</option>
-                <option value="snacks">Snack</option>
-                <option value="soda">Gaseosa</option>
+                <% category.forEach((category) => { %>
+                <option value="<%- category.id %>"> <%- category.name %></option>
+                <% }) %>  
             </select>
         </p>
         <p>

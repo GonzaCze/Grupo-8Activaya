@@ -1,9 +1,10 @@
 <header class="main-header">
     <div class="main-header-topBar">
-       <a href="../"><img src="/img/ActivaYAAAAA___1_-removebg-preview-removebg-preview.png" class="logo"></a>
-       <div class="buscar"> 
-        <input type="search"> <i class="fa-solid fa-search"></i>
-        </div>
+      <a href="../"><img src="/img/ActivaYAAAAA___1_-removebg-preview-removebg-preview.png" class="logo"></a>
+      <form class="buscar" method="get" action="/products/buscar">
+         <input type="search" name="search"> 
+        <button type="submit" ><i class="fa-solid fa-search"></i></button>
+    </form>
        <!-- <ul>
        <li class="sesion">
         <a href="/login"><i class="fa-solid fa-address-card"></i></a>
@@ -23,7 +24,7 @@
       <% if (locals.isLogged) { %>
       <ul class="bottom-navBar">
         <li> <a href="/users/users">Usuarios</a></li>
-        <li> <a href="/products/products">Productos</a></li>
+        <li> <a href="/products">Productos</a></li>
         <li> <a href="/products/create">CrearPDT</a></li>
         <li> <a href="/products/shoppingCart"> <i class="fa-solid fa-cart-shopping"></i></a></li>
         <li> <a href="/users/userLogged">Hi, <%= locals.userLogged.userName %> </a></li>

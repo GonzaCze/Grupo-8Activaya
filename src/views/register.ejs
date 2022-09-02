@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <%- include('./partials/head.ejs') %>
-        <link href="/css/register.css" rel="stylesheet" type="text/css">
+        <link href="/css/register.css" type="text/css">
         <title>Registrarse</title>
     </head>
     <body>
@@ -16,10 +16,10 @@
                     <input 
                     type="text" 
                     name="userName"   
-                    id="nombre" 
-                    class="form-control <%= locals.errors && errors.userName ? 'is-invalid': null %>" 
+                    class="form-control nombre <%= locals.errors && errors.userName ? 'is-invalid': null %>" 
                     value="<%= locals.oldData ? oldData.userName : null %>"
                     >
+                    <span></span>
                     <% if (locals.errors && errors.userName){ %>
                         <div class="text-error">
                             <%= errors.userName.msg %>
@@ -31,11 +31,10 @@
                     <input 
                     type="text" 
                     name="userLastN" 
-                    id="apellido" 
-                    class="form-control <%= locals.errors && errors.userLastN ? 'is-invalid': null %>"
+                    class="form-control apellido <%= locals.errors && errors.userLastN ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.userLastN : null %>"
                     >
-                    
+                    <span></span>
                     <% if (locals.errors && errors.userLastN){ %>
                         <div class="text-error">
                             <%= errors.userLastN.msg %>
@@ -47,10 +46,10 @@
                     <input 
                     type="email" 
                     name="userEmail" 
-                    id="email" 
-                    class="form-control <%= locals.errors && errors.userEmail ? 'is-invalid': null %>"
+                    class="form-control email<%= locals.errors && errors.userEmail ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.userEmail : null %>"
                     >
+                    <span></span>
                     <% if (locals.errors && errors.userEmail){ %>
                         <div class="text-error">
                             <%= errors.userEmail.msg %>
@@ -66,6 +65,7 @@
                     class="form-control <%= locals.errors && errors.userPass ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.userPass : null %>"
                     >
+                    <span></span>
                     <% if (locals.errors && errors.userPass){ %>
                         <div class="text-error">
                             <%= errors.userPass.msg %>
@@ -104,5 +104,6 @@
                 </form>
             </div>
         </main>
+        <script type="text/javascript" src="/js/validacion.js"> </script>
     </body>
-</html>
+    </html>

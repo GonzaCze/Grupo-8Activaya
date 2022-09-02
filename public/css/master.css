@@ -465,7 +465,7 @@ label{
 
 /* REGISTER */
 
-#nombre{
+.nombre{
     font-size: 1.1rem;
     margin-top: 20px;
     padding-left: 17%;
@@ -482,14 +482,20 @@ label{
     box-shadow: 2px 2px 5px 5px rgb(100, 100, 100); */
     width: 100%;
 }
-#nombre:hover{
+.nombre:hover{
     color:black;
     background-color: rgba(0, 0, 0,.1);
     transition: 
     background-color, 0.5s,
     color, 0.5s;
 }
-#apellido{
+.invalido{
+    border: solid 1px red;
+    box-shadow: 0 0 10px red    
+}
+
+
+.apellido{
     font-size: 1.1rem;
     margin-top: 20px;
     padding-left: 17%;
@@ -506,14 +512,14 @@ label{
     box-shadow: 2px 2px 5px 5px rgb(100, 100, 100); */
     width: 100%;
 }
-#apellido:hover{
+.apellido:hover{
     color:black;
     background-color: rgba(0, 0, 0,.1);
     transition: 
     background-color, 0.5s,
     color, 0.5s;
 }
-#email{
+.email{
     font-size: 1.1rem;
     margin-top: 20px;
     padding-left: 17%;
@@ -530,7 +536,7 @@ label{
     box-shadow: 2px 2px 5px 5px rgb(100, 100, 100); */
     width: 100%;
 }
-#email:hover{
+.email:hover{
     color:black;
     background-color: rgba(0, 0, 0,.1);
     transition: 
@@ -555,6 +561,13 @@ label{
     background-color, 0.5s,
     color, 0.5s;
     cursor: pointer;
+}
+
+.error {
+    display: block;
+    margin-bottom: 0px ; 
+    margin-top: 0px; 
+    font-size: 15px;
 }
 
 /* PRODUCTS */
@@ -822,8 +835,6 @@ h4{
     display: flex;
     width: 60%;
 }
-
-
 
 
 

@@ -82,6 +82,7 @@ const controller = {
         })
     })},
     add: (req, res) => {
+        console.log(Object.keys(req.body).length)
         let file = req.file
         modelProducto.create({
             pdtName: req.body.pdtName,

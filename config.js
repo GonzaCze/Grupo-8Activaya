@@ -4,6 +4,7 @@ module.exports = {
     password: "ignacio",
     database: "activaya3",
     host: "localhost",
-    port: 3306
+    adress:"127.0.0.5",
+    port: 3310
     }
 }

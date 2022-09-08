@@ -11,6 +11,7 @@ const setErrors = (message, field, isError = true) => {
       field.classList.add("invalido");
       field.nextElementSibling.classList.add("error");
       field.nextElementSibling.innerText = message;
+      
     } else {
       field.classList.remove("invalido");
       field.nextElementSibling.classList.remove("error");
@@ -27,11 +28,11 @@ const validation = (message, e, campo) => {
     const fieldValue = e.target.value
 
     if (fieldValue.trim().length <= 1) {
-        setErrors(message, field);
+        setErrors(message, field)
         todoOk = todoOk.filter((x) => {return x !== campo})
         console.log(todoOk)
     } else {
-      setErrors("", field, false);
+      setErrors("", field, false)
       valor = todoOk.filter((x) => {return x === campo})
         if (valor.length === 0){
           todoOk.push(campo)
@@ -72,6 +73,7 @@ userPass.addEventListener("input",(e, campo="password") => {
     if (valor.length === 0){
       todoOk.push(campo)
       console.log(todoOk)
+      field.nextElementSibling.innerHTML = ""
   }}
   else {
       todoOk = todoOk.filter((x) => {return x !== campo})
@@ -82,7 +84,6 @@ userPass.addEventListener("input",(e, campo="password") => {
 
 // Si la imagen sube bien, pushear al array todoOk.
 userImage.addEventListener("change", (e, campo="img") => {
-    campo = "image"
     const field = e.target;
     const fileExt = e.target.files[0].name.split(".").pop().toLowerCase();
     const allowedExt = ["jpg", "jpeg", "png", "gif"];

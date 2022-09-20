@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require('express-session');
+const cors = require("cors") 
 const cookies = require('cookie-parser')
 
 //Base de datos
@@ -33,11 +34,12 @@ app.use(cookies());
 app.use(userLoggedMiddle);
 
 
-
 // Routes
+app.use(cors()) // Para poder compartir la Api con peticiones de terceros.
 app.use('/', require('./routes/mainRoute'));
 app.use('/products', require('./routes/productsRoutes'));
 app.use('/users', require('./routes/usersRoutes'));
+
 
 
 //Levantando el Servidor

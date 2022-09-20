@@ -1,43 +1,60 @@
 <html lang="en">
-     <!-- Head -->
-  <head>
-        <%- include('./partials/head.ejs') %>
-        <link href="/css/detail.css" rel="stylesheet" type="text/css">
-        <title>Detalle Producto</title>
-  </head> 
-  <body>
-    <!-- Header -->
-    <%- include('./partials/header.ejs')%>
-      <h1 class="titleDetail">Detalle del producto</h1>
-      <br/>
+<!-- Head -->
+
+<head>
+  <%- include('./partials/head.ejs') %>
+    <link href="/css/detail.css" rel="stylesheet" type="text/css">
+    <title>Detalle Producto</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <%- include('./partials/header.ejs')%>
+    <h1 class="titleDetail">Detalle del producto</h1>
+    <br />
     <main class="main-products">
-          <!-- div solo de imagen -->
-            <div class="products-container">
-            
-                  <!-- div de la imagen -->
-                <div class="main-article"> 
-                <img src="/uploads/products/<%=products.pdtImage %>"  alt="" class="product-img"></a>
-              </div>
-            </div>
-            <!-- div datos del producto -->
-            <div class="descriptionProduct">
-                <h1 class="tittlePdt"> <%= products.pdtName %> </h1> 
-                <h4 class="pricePdt"> <%= products.pdtPrice %> Ars</h4>
-                <h4 class="capacityPdt"> <%= products.pdtCapacity %> ml</h4>
-                <h4 class='descriptionPdt'><%= products.pdtDescription %> </h4>
-            
-                <p> Podés retirar en nuestro local </p>
-                <p>Podés comprar como quieras
-                  aceptamos tarjetas de crédito, débito, mercadopago.</p>
-                <p>Compra protegida
-                  podés devolver tu pedido si no es lo que esperabas</p>
-                <p>Estamos disponibles para responder tus consultas
-                  escribinos por el chat en vivo</p> 
-                  <form method="POST" action="/products/eliminar/<%= products.pdtID%>?_method=DELETE">
-                  <button type="submit"> Borrar </button>
-                </form>
-                <a href="/products/editar/<%= products.pdtID %>"><button type="submit">Editar</button></a>
-                </div>     
+      <!-- div solo de imagen -->
+      <div class="products-container">
+
+        <!-- div de la imagen -->
+        <div class="main-article">
+          <img src="/uploads/products/<%=products.pdtImage %>" alt="" class="product-img"></a>
+        </div>
+      </div>
+      <!-- div datos del producto -->
+      <div class="descriptionProduct">
+        <h1 class="tittlePdt">
+          <%= products.pdtName %>
+            <%= products.pdtCapacity %> ml
+        </h1>
+        <h4 class="pricePdt">
+          $<%= products.pdtPrice %>
+        </h4>
+        <a class="myButton">Agregar al Carrito</a>
+        <div class="infoToBuy">
+          <p><i class="fas fa-store"></i>Podés retirar en nuestro local</p>
+          <p><i class="fas fa-credit-card"></i>Podés comprar como quieras
+            aceptamos tarjetas de crédito, débito, mercadopago.</p>
+          <p><i class="fas fa-shield-alt"></i>
+            Compra protegida
+            podés devolver tu pedido si no es lo que esperabas</p>
+          <p><i class="fab fa-whatsapp"></i>
+            Estamos disponibles para responder tus consultas
+            escribinos por el chat en vivo</p>
+        </div>
+        <div class="buttons">
+        <form method="POST" action="/products/eliminar/<%= products.pdtID%>?_method=DELETE">
+            <button class="myButton" type="submit">Borrar</button>
+        </form>
+        <a href="/products/editar/<%= products.pdtID %>">
+          <button class="myButton" type="submit">Editar</button></a>
+        </div>
+        <p class='descriptionPdt'>
+          <%= products.pdtDescription %>
+      </p>
+      </div>
     </main>
-  </body>     
+    <%- include('./partials/footer.ejs') %>
+</body>
+
 </html>

@@ -624,11 +624,7 @@ label{
     border-radius: 10px;
     background: #f0f0f0;
     padding: 30px;
-    
-    
-    
-    
-    
+
 }
 .main-article:hover{
     
@@ -640,8 +636,7 @@ label{
 }
 .product-img{
     width: 85%;
-    
-    
+    height: 50vw;
     
 }
 .product-description{
@@ -957,6 +952,7 @@ h4{
      }
      .product-img{
         width: 70%;
+        height: 22vw;
        
     }
     
@@ -1037,11 +1033,12 @@ h4{
     .products{
         display: grid;
         grid-template-columns: repeat(4, minmax(10rem, 1fr));
-        
-        grid-gap: 50px
+        grid-gap: 50px;
+        width:100%;
      }
      .product-img{
         width: 60%;
+        height: 16vw;
     }
     h5{
         font-size: 20px;

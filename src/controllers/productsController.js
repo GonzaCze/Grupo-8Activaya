@@ -20,7 +20,7 @@ const controller = {
         Promise
         .all([productos, categorias])
         .then(([products,category]) => {
-            res.render("products", {products,category})
+            res.render("products",{products,category})
         }
     )},
     filter: (req,res) => {

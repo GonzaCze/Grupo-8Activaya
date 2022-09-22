@@ -43,7 +43,7 @@ app.use('/users', require('./routes/usersRoutes'));
 
 
 //Levantando el Servidor
-const PORT = 3000;
+const PORT = 5000;
 app.listen(PORT, ()=>{
     console.log('Server corriendo en port: ', PORT)
 

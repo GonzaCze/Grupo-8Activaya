@@ -23,7 +23,7 @@ const Product = sequelize.define("products",{
         type: DataTypes.DECIMAL
     },
     pdtImage:{
-        type:DataTypes.BLOB
+        type:DataTypes.STRING
     },
     brands_id: {
         type:DataTypes.INTEGER

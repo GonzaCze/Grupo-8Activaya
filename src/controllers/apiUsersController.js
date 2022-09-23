@@ -9,7 +9,7 @@ const controller = {
         .then((resUsers) => {
         const Api = {
             count : resUsers.length,
-            users: resUsers.map(element => ({id:element.userID, name:element.userName, email:element.userEmail, imagen: `http://localhost:5000/uploads/users/${element.userImage}`}))
+            users: resUsers.map(element => ({id:element.userID, name:element.userName, email:element.userEmail, detail: `http://localhost:5000/users/profile/${element.userID}`}))
             }
         res.json(Api);
     })},

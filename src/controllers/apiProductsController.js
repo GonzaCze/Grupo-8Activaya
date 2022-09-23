@@ -12,9 +12,10 @@ const controller = {
         const categorias = category.findAll()
         Promise
         .all([productos, categorias])
-        .then(([resUsers, category]) => {
+        .then(([infoProducts, category]) => {
+            console.log(category.id)
 
-            const totalCategory = resUsers.reduce((prev,curr)=> {
+            const totalCategory = infoProducts.reduce((prev,curr)=> {
                 prev[curr["CategoryId"]] = (prev[curr["CategoryId"]] || 0) + 1
                 return prev
             }, {} )
@@ -29,9 +30,9 @@ const controller = {
                 }return obj})
 
             const Api = {
-                count: category.length,
+                count: infoProducts.length,
                 countByCategory: obj,
-                products: resUsers.map(element => ({id:element.pdtID, name:element.pdtName, email:element.pdtDescription, capacity:element.pdtCapacity, price: element.pdtPrice, imagen: element.pdtImage }))
+                products: infoProducts.map(element => ({id:element.pdtID, name:element.pdtName, email:element.pdtDescription, capacity:element.pdtCapacity, price: element.pdtPrice, detail: `http://localhost:5000/products/detalle/${element.pdtID}` }))
                 }            
             res.json(Api);
             })},
@@ -39,6 +40,7 @@ const controller = {
         modelProducto.findByPk(req.params.id)
         .then((products) => {
             const {CategoryId, brands_id, ...apiProductsId} = products.dataValues
+            apiProductsId["pdtImage"] = `http://localhost:5000/uploads/products/${products.pdtImage}`
             res.json(apiProductsId)
         })
     }

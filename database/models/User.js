@@ -13,7 +13,7 @@ const User = sequelize.define("users", {
     userEmail: DataTypes.STRING,
     userPass: DataTypes.STRING,
     userCategory: DataTypes.STRING,
-    userImage: DataTypes.BLOB,
+    userImage: DataTypes.STRING,
 },
 {
     sequelize,

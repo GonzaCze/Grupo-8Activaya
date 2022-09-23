@@ -39,6 +39,8 @@ app.use(cors()) // Para poder compartir la Api con peticiones de terceros.
 app.use('/', require('./routes/mainRoute'));
 app.use('/products', require('./routes/productsRoutes'));
 app.use('/users', require('./routes/usersRoutes'));
+app.use('/api/products', require('./routes/apiProductsRoute'));
+app.use('/api/users', require('./routes/apiUsersRoute'));
 
 
 

@@ -7,7 +7,7 @@ const asociation = require ("../../database/models/asociations")
 const { Op } = require("sequelize")
 
 const controller = {
-    create: (req, res) => {
+    create: (req, res) => {z
         category.findAll()
         .then()
     .then((category) => {

@@ -22,10 +22,13 @@ router.get("/detalle/:id", controller.detail)
 //Modificar Producto
 router.get("/editar/:id", controller.edicionFormulario)
 router.put("/editar/:id", controller.editado)
+router.get("/editar/:id", controller.editado)
 
 //Eliminar producto en proceso
 router.delete ("/eliminar/:id", controller.delete)
+router.get ("/eliminar/:id", controller.delete)
 
 router.get('/shoppingCart', controller.shoppingCart);
+
 
 module.exports = router;

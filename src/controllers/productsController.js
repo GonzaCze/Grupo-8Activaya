@@ -7,7 +7,7 @@ const asociation = require ("../../database/models/asociations")
 const { Op } = require("sequelize")
 
 const controller = {
-    create: (req, res) => {z
+    create: (req, res) => {
         category.findAll()
         .then()
     .then((category) => {
@@ -77,9 +77,9 @@ const controller = {
             }
         }).then(() => {
             modelProducto.findAll()
-        .then((products) => {
-            res.render("products", {products:products})
-        })
+        .then(() => {
+                res.redirect("/products")
+            })
     })},
     add: (req, res) => {
         console.log(Object.keys(req.body).length)
@@ -111,11 +111,8 @@ const controller = {
             }
         })
     .then(() => {
-        modelProducto.findAll()
-    .then((products) => {
-        res.render("products", {products:products})
+        res.redirect("/products")
     })
-})}
-}
+}}
 
 module.exports= controller;

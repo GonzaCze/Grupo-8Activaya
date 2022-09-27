@@ -6,6 +6,11 @@
     margin: 0;
 }
 
+.text-error {
+    color:red;
+    font-weight:900;
+}
+
 .imageUser img {
     width: 20vw;
 }

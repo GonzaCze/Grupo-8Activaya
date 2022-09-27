@@ -73,9 +73,9 @@ const controller = {
                     oldData: req.body,
                 });
             }
+
             modelUser.findAll()
             .then((User) => {
-                
         let userInDb =  User.find((User) => User.userEmail == req.body.userEmail);
         if (userInDb){
             return res.render('register', {
@@ -87,8 +87,7 @@ const controller = {
                 oldData: req.body
             })
         }
-    })
-        let userToCreate = {
+        else {let userToCreate = {
             userName: req.body.userName,
             userLastN: req.body.userLastN,
             userEmail: req.body.userEmail,
@@ -96,12 +95,14 @@ const controller = {
             userPass:  bcrypt.hashSync(req.body.userPass, 10),
             userImage: req.file ? req.file.filename : ''
         }  
-
         modelUser.create(userToCreate)
         .then(() => {
             return res.redirect('../users/login') 
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error));}
+    })
+
+        
 
         // registro proceso
         // console.log(req.body)

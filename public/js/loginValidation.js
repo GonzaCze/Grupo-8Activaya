@@ -42,7 +42,7 @@ const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
 console.log(regex.test(fieldValue))
 
 if (fieldValue.trim().length > 5 && !regex.test(fieldValue) ) {
-    setErrors("Please enter a valid email", field);
+    setErrors("Un email valido por favor", field);
 } else {
   setErrors("", field, false);
 }

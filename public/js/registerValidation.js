@@ -102,6 +102,7 @@ userImage.addEventListener("change", (e, campo="img") => {
   }
 }});
 
+
 userName.addEventListener("blur", (e) => validation("El nombre es obligatorio y como mínimo debe tener 2 caracteres", e, "name" ))
 userLastN.addEventListener("blur", (e) => validation("El apellido es obligatorio y como mínimo debe tener 2 caracteres", e, "lastName" ))
 userEmail.addEventListener("blur", (e) => validation("El email es obligatorio", e, "email"))
@@ -110,7 +111,7 @@ userEmail.addEventListener("input",(e) => validateEmail(e,))
 
 //para detener el boton de envio de formulario, utilice el array todoOk donde por cada validación correcta pushea el nombre del campo, entonces al terminar 
 buttonSubmit.addEventListener("submit", (e) => {
-  if(todoOk.length != 6) {
+  if(userEmail.value.length <= 2 || userName.value.length < 2 || userLastN.value.length <2 ) {
     e.preventDefault()
     console.log(1)
     document.querySelector(".formNotSend").innerText= "Debe completar su registro"

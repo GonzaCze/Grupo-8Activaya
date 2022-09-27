@@ -1,6 +1,7 @@
 <html lang="en">
     <!-- Head -->
     <head>
+        <link href="/css/button.css" rel="stylesheet" type="text/css">
         <%- include('./partials/head.ejs') %>
         <!-- <link href="/css" rel="stylesheet" type="text/css"> -->
         <title>Detalle de producto</title>
@@ -40,8 +41,8 @@
             <label for="price">Precio:</label>
             <input type="number" name="pdtPrice" id="price" required>
         </p>
-        <input type="submit" value="Guardar" id="registro">
-        <input type="reset" value="Limpiar" id="registro">
+        <input class="mybutton"type="submit" value="Guardar" id="registro">
+        <input class="mybutton" type="reset" value="Limpiar" id="registro">
     </form>
         </div>
     </main>

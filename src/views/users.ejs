@@ -2,6 +2,7 @@
      <!-- Head -->
   <head>
     <%- include('./partials/head.ejs') %>
+    <link href="/css/button.css" rel="stylesheet" type="text/css">
     <link href="/css/creacion.css" rel="stylesheet" type="text/css">
     <title>Marcas</title>
   </head> 
@@ -25,13 +26,13 @@
           <section class="products">
             <% for (let i = 0; i<users.length ; i++) { %>
               <div class="main-article">
-                <a href="">
+                <a href="/users/profile/<%= users[i].userID %>">
                   <img src="/uploads/users/<%=users[i].userImage %>"  alt="" class="product-img">
                 </a>
                 <div class="product-description">
                   <h3 class="product-title"><%= users[i].userCategory %></h3>
                   <h4 class="product-title"><%= users[i].userName %></h4>
-                  <a href="/users/profile/<%= users[i].userID %>"><button>Perfil</button></a>
+                  <a href="/users/profile/<%= users[i].userID %>"><button class="mybutton">Perfil</button></a>
                 </div>
               </div>
               <%}%>

@@ -2,6 +2,7 @@
      <!-- Head -->
   <head>
         <%- include('./partials/head.ejs') %>
+        <link href="/css/button.css" rel="stylesheet" type="text/css">
         <link href="/css/creacion.css" rel="stylesheet" type="text/css">
         <title>Marcas</title>
   </head> 
@@ -25,12 +26,12 @@
         <h1>Productos</h1>
         <div class="category">
           <form action="/products/filtro" method="post">
-          <h3>Categoria</h3>
+          <h3>Busca por Categoria</h3>
           <select name="pdtCategory">
             <% category.forEach((category) => { %>
               <option value="<%- category.id %>"><%- category.name %> </option>
               <% }) %> 
-              <input type="submit" value="Buscar" id="registro">
+              <input class="mybutton" type="submit" value="Buscar" id="registro">
             </select>
           </form>
       </div>

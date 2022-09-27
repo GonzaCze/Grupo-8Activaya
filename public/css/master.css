@@ -6,6 +6,9 @@
     margin: 0;
 }
 
+.imageUser img {
+    width: 20vw;
+}
 
 body{
     font-family: 'Montserrat', sans-serif;
